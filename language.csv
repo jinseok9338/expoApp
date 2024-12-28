@@ -1,0 +1,63 @@
+category,key,ko,en
+cart,discount,상품할인,discount
+cart,select,선택삭제,unselect
+cart,selectall,전체 선택,select all
+cart/button,order,주문하기,order
+cart/delivery,fee,배송비,delivery fee
+cart/delivery,noFee,무료배송,free delivery
+cart/delivery,product,배송상품,delivery products
+cart/empty,addProduct,새로운 상품으로 채워주세요,Add a new product
+cart/empty,noProduct,장바구니가 비어있어요,The cart is empty
+cart/empty,seeMore,상품 보러가기,see more
+cart/total,estimatedPoints,예상 적립포인트,estimated points
+cart/total,total,총 상품금액,total
+cart/total,totalProductsPrice,총 {{n}} 개 주문금액,total {{0}} orders price
+categories/error,not-found,상품을 불러오는 중 오류가 발생했습니다., Error loading products
+categories/header,purchasing,{{n}}개 구매중,buying {{0}} items
+categories/header,seeAll,전체보기,see all
+categories/recommend,title,회원님을 위한 추천 상품,Recommended products
+common,currency,{{n}}원,KRW {{n}}
+common/button,cancel,취소,Cancel
+common/button,findPassword,비밀번호 찾기,Find Password
+common/button,login,로그인,Login
+common/button,ok,확인,OK
+common/label,email,이메일,Email
+common/label,password,비밀번호,Password
+delivery/info,address,주소,Address
+delivery/info,deliveryPlaceInfo,배송지 정보,Delivery place information
+delivery/info,name,이름,Name
+delivery/info,phoneNumber,연락처,Phone number
+delivery/info,postalCode,우편번호,Postal code
+footer/path,categories,전체보기,all
+footer/path,home,홈,home
+footer/path,me,마이페이지,me
+footer/path,search,검색,search
+form/description,confirmPassword,변경하실 비밀번호를 한번 더 입력해주세요.,Please enter the new password again.
+form/description,findPassword,비밀번호 초기화를 위해 이용중인 이메일을 입력해주세요. 이용하고 계신 이메일을 통해 새로운 비밀번호를 전송합니다.,Please enter the email address you used to reset your password. We will send you a new password through email.
+form/description,newPassword,"비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.","Password must include at least one letter, number, and special character."
+form/description,oldPassword,현제 비밀번호를 입력해주세요.,Please enter your current password.
+form/message,emailFormatIncorrect,이메일 또는 비밀번호가 일치하지 않습니다.,Email or password doesn't match.
+form/message,emailFormatIncorrect,이메일 포맷이 아닙니다.,Email format is incorrect.
+form/message,enterEmail,이메일 입력,Please enter your email.
+form/message,minimumPasswordRequirement,비밀번호는 최소 8자 이상이어야 합니다.,Password must be at least 8 characters.
+form/message,passwordConditions,"비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.","Password must include at least one letter, number, and special character."
+form/message,passwordConditionsError,"비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.","Password must include at least one letter, number, and special character."
+form/message,required,필수 항목 입니다.,This field is required.
+form/message,wrongPassword,비밀번호가 일치하지 않습니다.,Password does not match.
+form/placeholder,confirmPassword,비밀번호를 입력해주세요.,Enter password
+form/placeholder,email,이메일 입력,Enter email
+form/placeholder,newPassword,비밀번호를 입력해주세요.,Enter password
+form/placeholder,oldPassword,비밀번호를 입력해주세요.,Enter password
+form/placeholder,password,비밀번호 입력,Enter password
+form/title,confirmPassword,비밀번호 확인,Confirm password
+form/title,newPassword,새로운 비밀번호,New password
+form/title,oldPassword,현재 사용중인 비밀번호,Current password
+header/search,placeholder,검색,search
+order/item,discountAmount,할인금액,Discount amount
+order/item,finalPrice,최종 구매가,Final price
+order/item,orderPlaceDate,주문일자[주문번호],Order date [order number]
+order/item,originalPrice,구매가,Original price
+order/item,productCode,상품코드,Product code
+order/item,quantity,수량,Quantity
+order/item,size,사이즈,Size
+search/header,title,인기 검색어,trending search words

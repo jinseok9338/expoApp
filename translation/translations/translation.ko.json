@@ -1,0 +1,117 @@
+{
+  "cart": {
+    "discount": "상품할인",
+    "select": "선택삭제",
+    "selectall": "전체 선택",
+    "button": {
+      "order": "주문하기"
+    },
+    "delivery": {
+      "fee": "배송비",
+      "noFee": "무료배송",
+      "product": "배송상품"
+    },
+    "empty": {
+      "addProduct": "새로운 상품으로 채워주세요",
+      "noProduct": "장바구니가 비어있어요",
+      "seeMore": "상품 보러가기"
+    },
+    "total": {
+      "estimatedPoints": "예상 적립포인트",
+      "total": "총 상품금액",
+      "totalProductsPrice": "총 {{n}} 개 주문금액"
+    }
+  },
+  "categories": {
+    "error": {
+      "not-found": "상품을 불러오는 중 오류가 발생했습니다."
+    },
+    "header": {
+      "purchasing": "{{n}}개 구매중",
+      "seeAll": "전체보기"
+    },
+    "recommend": {
+      "title": "회원님을 위한 추천 상품"
+    }
+  },
+  "common": {
+    "currency": "{{n}}원",
+    "button": {
+      "cancel": "취소",
+      "findPassword": "비밀번호 찾기",
+      "login": "로그인",
+      "ok": "확인"
+    },
+    "label": {
+      "email": "이메일",
+      "password": "비밀번호"
+    }
+  },
+  "delivery": {
+    "info": {
+      "address": "주소",
+      "deliveryPlaceInfo": "배송지 정보",
+      "name": "이름",
+      "phoneNumber": "연락처",
+      "postalCode": "우편번호"
+    }
+  },
+  "footer": {
+    "path": {
+      "categories": "전체보기",
+      "home": "홈",
+      "me": "마이페이지",
+      "search": "검색"
+    }
+  },
+  "form": {
+    "description": {
+      "confirmPassword": "변경하실 비밀번호를 한번 더 입력해주세요.",
+      "findPassword": "비밀번호 초기화를 위해 이용중인 이메일을 입력해주세요. 이용하고 계신 이메일을 통해 새로운 비밀번호를 전송합니다.",
+      "newPassword": "비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.",
+      "oldPassword": "현제 비밀번호를 입력해주세요."
+    },
+    "message": {
+      "emailFormatIncorrect": "이메일 포맷이 아닙니다.",
+      "enterEmail": "이메일 입력",
+      "minimumPasswordRequirement": "비밀번호는 최소 8자 이상이어야 합니다.",
+      "passwordConditions": "비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.",
+      "passwordConditionsError": "비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.",
+      "required": "필수 항목 입니다.",
+      "wrongPassword": "비밀번호가 일치하지 않습니다."
+    },
+    "placeholder": {
+      "confirmPassword": "비밀번호를 입력해주세요.",
+      "email": "이메일 입력",
+      "newPassword": "비밀번호를 입력해주세요.",
+      "oldPassword": "비밀번호를 입력해주세요.",
+      "password": "비밀번호 입력"
+    },
+    "title": {
+      "confirmPassword": "비밀번호 확인",
+      "newPassword": "새로운 비밀번호",
+      "oldPassword": "현재 사용중인 비밀번호"
+    }
+  },
+  "header": {
+    "search": {
+      "placeholder": "검색"
+    }
+  },
+  "order": {
+    "item": {
+      "discountAmount": "할인금액",
+      "finalPrice": "최종 구매가",
+      "orderPlaceDate": "주문일자[주문번호]",
+      "originalPrice": "구매가",
+      "productCode": "상품코드",
+      "quantity": "수량",
+      "size": "사이즈"
+    }
+  },
+  "search": {
+    "header": {
+      "title": "인기 검색어"
+    }
+  }
+}

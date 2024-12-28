@@ -12,6 +12,7 @@ import { NAV_THEME } from "@/lib/constants";
 import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "@/api/client";
 import { PortalHost } from "@rn-primitives/portal";
+import "@/translation/i18n";
 
 const LIGHT_THEME: Theme = {
   dark: false,

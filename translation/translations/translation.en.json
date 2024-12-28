@@ -1,0 +1,117 @@
+{
+  "cart": {
+    "discount": "discount",
+    "select": "unselect",
+    "selectall": "select all",
+    "button": {
+      "order": "order"
+    },
+    "delivery": {
+      "fee": "delivery fee",
+      "noFee": "free delivery",
+      "product": "delivery products"
+    },
+    "empty": {
+      "addProduct": "Add a new product",
+      "noProduct": "The cart is empty",
+      "seeMore": "see more"
+    },
+    "total": {
+      "estimatedPoints": "estimated points",
+      "total": "total",
+      "totalProductsPrice": "total {{0}} orders price"
+    }
+  },
+  "categories": {
+    "error": {
+      "not-found": " Error loading products"
+    },
+    "header": {
+      "purchasing": "buying {{0}} items",
+      "seeAll": "see all"
+    },
+    "recommend": {
+      "title": "Recommended products"
+    }
+  },
+  "common": {
+    "currency": "KRW {{n}}",
+    "button": {
+      "cancel": "Cancel",
+      "findPassword": "Find Password",
+      "login": "Login",
+      "ok": "OK"
+    },
+    "label": {
+      "email": "Email",
+      "password": "Password"
+    }
+  },
+  "delivery": {
+    "info": {
+      "address": "Address",
+      "deliveryPlaceInfo": "Delivery place information",
+      "name": "Name",
+      "phoneNumber": "Phone number",
+      "postalCode": "Postal code"
+    }
+  },
+  "footer": {
+    "path": {
+      "categories": "all",
+      "home": "home",
+      "me": "me",
+      "search": "search"
+    }
+  },
+  "form": {
+    "description": {
+      "confirmPassword": "Please enter the new password again.",
+      "findPassword": "Please enter the email address you used to reset your password. We will send you a new password through email.",
+      "newPassword": "Password must include at least one letter, number, and special character.",
+      "oldPassword": "Please enter your current password."
+    },
+    "message": {
+      "emailFormatIncorrect": "Email format is incorrect.",
+      "enterEmail": "Please enter your email.",
+      "minimumPasswordRequirement": "Password must be at least 8 characters.",
+      "passwordConditions": "Password must include at least one letter, number, and special character.",
+      "passwordConditionsError": "Password must include at least one letter, number, and special character.",
+      "required": "This field is required.",
+      "wrongPassword": "Password does not match."
+    },
+    "placeholder": {
+      "confirmPassword": "Enter password",
+      "email": "Enter email",
+      "newPassword": "Enter password",
+      "oldPassword": "Enter password",
+      "password": "Enter password"
+    },
+    "title": {
+      "confirmPassword": "Confirm password",
+      "newPassword": "New password",
+      "oldPassword": "Current password"
+    }
+  },
+  "header": {
+    "search": {
+      "placeholder": "search"
+    }
+  },
+  "order": {
+    "item": {
+      "discountAmount": "Discount amount",
+      "finalPrice": "Final price",
+      "orderPlaceDate": "Order date [order number]",
+      "originalPrice": "Original price",
+      "productCode": "Product code",
+      "quantity": "Quantity",
+      "size": "Size"
+    }
+  },
+  "search": {
+    "header": {
+      "title": "trending search words"
+    }
+  }
+}

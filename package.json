@@ -11,7 +11,8 @@
     "test": "jest --watchAll",
     "lint": "expo lint",
     "doctor": "npx expo-doctor",
-    "language-update": "ts-node ./scripts/sortCsv.ts && ts-node ./scripts/languageUpdate/languageGenerate.ts"
+    "language-update": "ts-node ./scripts/sortCsv.ts && ts-node ./scripts/languageUpdate/languageGenerate.ts",
+    "build:android-local": "eas build --platform android --profile development --local"
   },
   "jest": {
     "preset": "jest-expo"
@@ -32,6 +33,7 @@
     "expo": "~52.0.23",
     "expo-blur": "~14.0.1",
     "expo-constants": "~17.0.3",
+    "expo-dev-client": "~5.0.7",
     "expo-font": "~13.0.2",
     "expo-haptics": "~14.0.0",
     "expo-linking": "~7.0.3",
@@ -40,6 +42,7 @@
     "expo-status-bar": "~2.0.0",
     "expo-symbols": "~0.2.0",
     "expo-system-ui": "~4.0.6",
+    "expo-updates": "~0.26.10",
     "expo-web-browser": "~14.0.1",
     "i18next": "^24.2.0",
     "lucide-react-native": "^0.469.0",

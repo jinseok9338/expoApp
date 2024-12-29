@@ -1,6 +1,7 @@
 import { Text } from "@/components/ui/text";
 import useVersionCheck from "@/hooks/useCheckUpdate";
 import { Button, View } from "react-native";
+import * as Application from "expo-application";
 
 export default function HomeScreen() {
   const {
@@ -35,6 +36,9 @@ export default function HomeScreen() {
             title="New version available in store!"
             onPress={handleStoreNavigation}
           />
+          <Text className="text-red-700">
+            Version: {Application.nativeApplicationVersion}
+          </Text>
         </>
       )}
     </View>

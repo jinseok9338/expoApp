@@ -12,7 +12,7 @@
     "lint": "expo lint",
     "doctor": "npx expo-doctor",
     "language-update": "ts-node ./scripts/sortCsv.ts && ts-node ./scripts/languageUpdate/languageGenerate.ts",
-    "build:android-local": "eas build --platform android --profile development --local"
+    "build:android-local": "eas build --platform android --profile preview --local"
   },
   "jest": {
     "preset": "jest-expo"

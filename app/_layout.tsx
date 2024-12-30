@@ -1,7 +1,7 @@
 import "@/global.css";
 
 import { Theme, ThemeProvider } from "@react-navigation/native";
-import { SplashScreen, Stack } from "expo-router";
+import { SplashScreen, Stack, useRootNavigationState } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
 import queryClient from "@/api/client";

@@ -3,3 +3,48 @@ bottom/navigation,home,홈,home
 bottom/navigation,me,마이페이지,me
 bottom/navigation,products,상품,products
 bottom/navigation,schedule,일정,schedule
+common,currency,{{n}}원,KRW {{n}}
+common/button,cancel,취소,Cancel
+common/button,English,English,English
+common/button,findPassword,비밀번호 찾기,Find Password
+common/button,history,나의 구매 내역,My purchase history
+common/button,Ko,한국어,Korean
+common/button,login,로그인,Login
+common/button,logout,로그아웃,Logout
+common/button,ok,확인,OK
+common/button,passwordChange,비밀번호 변경,Change password
+common/label,email,이메일,Email
+common/label,password,비밀번호,Password
+form/description,confirmPassword,변경하실 비밀번호를 한번 더 입력해주세요.,Please enter the new password again.
+form/description,findPassword,비밀번호 초기화를 위해 이용중인 이메일을 입력해주세요. 이용하고 계신 이메일을 통해 새로운 비밀번호를 전송합니다.,Please enter the email address you used to reset your password. We will send you a new password through email.
+form/description,newPassword,"비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.","Password must include at least one letter, number, and special character."
+form/description,oldPassword,현제 비밀번호를 입력해주세요.,Please enter your current password.
+form/message,emailFormatIncorrect,이메일 또는 비밀번호가 일치하지 않습니다.,Email or password doesn't match.
+form/message,emailFormatIncorrect,이메일 포맷이 아닙니다.,Email format is incorrect.
+form/message,enterEmail,이메일 입력,Please enter your email.
+form/message,minimumPasswordRequirement,비밀번호는 최소 8자 이상이어야 합니다.,Password must be at least 8 characters.
+form/message,passwordConditions,"비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.","Password must include at least one letter, number, and special character."
+form/message,passwordConditionsError,"비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.","Password must include at least one letter, number, and special character."
+form/message,required,필수 항목 입니다.,This field is required.
+form/message,wrongPassword,비밀번호가 일치하지 않습니다.,Password does not match.
+form/placeholder,confirmPassword,비밀번호를 입력해주세요.,Enter password
+form/placeholder,email,이메일 입력,Enter email
+form/placeholder,newPassword,비밀번호를 입력해주세요.,Enter password
+form/placeholder,oldPassword,비밀번호를 입력해주세요.,Enter password
+form/placeholder,password,비밀번호 입력,Enter password
+form/title,confirmPassword,비밀번호 확인,Confirm password
+form/title,newPassword,새로운 비밀번호,New password
+form/title,oldPassword,현재 사용중인 비밀번호,Current password
+login/form,email-error,유효한 이메일 주소를 입력하세요.,email-error
+login/form,findId,아이디 찾기,Find ID
+login/form,findPassword,비밀번호 찾기,Find Password
+login/form,password-error,비밀번호는 최소 6자 이상이어야 합니다.,password-error
+main/navigation,announcements,공지사항,announcements
+main/navigation,as-processing,AS 처리등록,as-processing
+main/navigation,barcode,시리얼 검색,barcode
+main/navigation,customer-management,고객관리,customer-management
+main/navigation,installation-registration,설치등록,installation-registration
+main/navigation,notifications,알림,notifications
+main/navigation,products,제품관리,products
+main/navigation,regular-checks,정기점검 등록,regular-checks
+main/navigation,support-center,지원센터,support-center

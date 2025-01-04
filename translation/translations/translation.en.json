@@ -6,5 +6,73 @@
       "products": "products",
       "schedule": "schedule"
     }
+  },
+  "common": {
+    "currency": "KRW {{n}}",
+    "button": {
+      "cancel": "Cancel",
+      "English": "English",
+      "findPassword": "Find Password",
+      "history": "My purchase history",
+      "Ko": "Korean",
+      "login": "Login",
+      "logout": "Logout",
+      "ok": "OK",
+      "passwordChange": "Change password"
+    },
+    "label": {
+      "email": "Email",
+      "password": "Password"
+    }
+  },
+  "form": {
+    "description": {
+      "confirmPassword": "Please enter the new password again.",
+      "findPassword": "Please enter the email address you used to reset your password. We will send you a new password through email.",
+      "newPassword": "Password must include at least one letter, number, and special character.",
+      "oldPassword": "Please enter your current password."
+    },
+    "message": {
+      "emailFormatIncorrect": "Email format is incorrect.",
+      "enterEmail": "Please enter your email.",
+      "minimumPasswordRequirement": "Password must be at least 8 characters.",
+      "passwordConditions": "Password must include at least one letter, number, and special character.",
+      "passwordConditionsError": "Password must include at least one letter, number, and special character.",
+      "required": "This field is required.",
+      "wrongPassword": "Password does not match."
+    },
+    "placeholder": {
+      "confirmPassword": "Enter password",
+      "email": "Enter email",
+      "newPassword": "Enter password",
+      "oldPassword": "Enter password",
+      "password": "Enter password"
+    },
+    "title": {
+      "confirmPassword": "Confirm password",
+      "newPassword": "New password",
+      "oldPassword": "Current password"
+    }
+  },
+  "login": {
+    "form": {
+      "email-error": "email-error",
+      "findId": "Find ID",
+      "findPassword": "Find Password",
+      "password-error": "password-error"
+    }
+  },
+  "main": {
+    "navigation": {
+      "announcements": "announcements",
+      "as-processing": "as-processing",
+      "barcode": "barcode",
+      "customer-management": "customer-management",
+      "installation-registration": "installation-registration",
+      "notifications": "notifications",
+      "products": "products",
+      "regular-checks": "regular-checks",
+      "support-center": "support-center"
+    }
   }
 }

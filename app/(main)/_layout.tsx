@@ -29,6 +29,7 @@ export default function TabLayout() {
         }),
       }}
     >
+      {/* Only include these specific screens */}
       <Tabs.Screen
         name="index"
         options={{

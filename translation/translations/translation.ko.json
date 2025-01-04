@@ -6,5 +6,73 @@
       "products": "상품",
       "schedule": "일정"
     }
+  },
+  "common": {
+    "currency": "{{n}}원",
+    "button": {
+      "cancel": "취소",
+      "English": "English",
+      "findPassword": "비밀번호 찾기",
+      "history": "나의 구매 내역",
+      "Ko": "한국어",
+      "login": "로그인",
+      "logout": "로그아웃",
+      "ok": "확인",
+      "passwordChange": "비밀번호 변경"
+    },
+    "label": {
+      "email": "이메일",
+      "password": "비밀번호"
+    }
+  },
+  "form": {
+    "description": {
+      "confirmPassword": "변경하실 비밀번호를 한번 더 입력해주세요.",
+      "findPassword": "비밀번호 초기화를 위해 이용중인 이메일을 입력해주세요. 이용하고 계신 이메일을 통해 새로운 비밀번호를 전송합니다.",
+      "newPassword": "비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.",
+      "oldPassword": "현제 비밀번호를 입력해주세요."
+    },
+    "message": {
+      "emailFormatIncorrect": "이메일 포맷이 아닙니다.",
+      "enterEmail": "이메일 입력",
+      "minimumPasswordRequirement": "비밀번호는 최소 8자 이상이어야 합니다.",
+      "passwordConditions": "비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.",
+      "passwordConditionsError": "비밀번호는 알파벳, 숫자, 특수문자를 포함해야 합니다.",
+      "required": "필수 항목 입니다.",
+      "wrongPassword": "비밀번호가 일치하지 않습니다."
+    },
+    "placeholder": {
+      "confirmPassword": "비밀번호를 입력해주세요.",
+      "email": "이메일 입력",
+      "newPassword": "비밀번호를 입력해주세요.",
+      "oldPassword": "비밀번호를 입력해주세요.",
+      "password": "비밀번호 입력"
+    },
+    "title": {
+      "confirmPassword": "비밀번호 확인",
+      "newPassword": "새로운 비밀번호",
+      "oldPassword": "현재 사용중인 비밀번호"
+    }
+  },
+  "login": {
+    "form": {
+      "email-error": "유효한 이메일 주소를 입력하세요.",
+      "findId": "아이디 찾기",
+      "findPassword": "비밀번호 찾기",
+      "password-error": "비밀번호는 최소 6자 이상이어야 합니다."
+    }
+  },
+  "main": {
+    "navigation": {
+      "announcements": "공지사항",
+      "as-processing": "AS 처리등록",
+      "barcode": "시리얼 검색",
+      "customer-management": "고객관리",
+      "installation-registration": "설치등록",
+      "notifications": "알림",
+      "products": "제품관리",
+      "regular-checks": "정기점검 등록",
+      "support-center": "지원센터"
+    }
   }
 }

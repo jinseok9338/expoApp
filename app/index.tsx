@@ -5,8 +5,6 @@ import UpdateProgress from "../components/splash/startUp";
 import useVersionCheck from "@/hooks/useCheckUpdate";
 
 export default function StartUpScreen() {
-  const { isUpdating, isUpdateAvailable, updateApp } = useVersionCheck();
-
   // useEffect(() => {
   //   if (isUpdateAvailable) {
   //     updateApp();
@@ -30,6 +28,6 @@ export default function StartUpScreen() {
 
     //   {isUpdating && <UpdateProgress />}
     // </View>
-    <Redirect href="/main" />
+    <Redirect href="/(main)" />
   );
 }

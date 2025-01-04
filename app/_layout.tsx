@@ -11,6 +11,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { SplashScreen, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const LIGHT_THEME: Theme = {
   dark: false,
@@ -78,7 +79,6 @@ export default function RootLayout() {
       <QueryClientProvider client={queryClient}>
         <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
         <Stack />
-        <PortalHost />
       </QueryClientProvider>
     </ThemeProvider>
   );

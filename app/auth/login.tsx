@@ -15,7 +15,6 @@ import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
-import { Input } from "@/components/ui/input";
 
 export const formSchema = z.object({
   email: z
@@ -78,7 +77,7 @@ export default function LoginPage() {
                 control={control}
                 name="email"
                 render={({ field: { onChange, onBlur, value } }) => (
-                  <Input
+                  <TextInput
                     placeholder={t("form.placeholder.email")}
                     className="border border-gray-300 rounded-lg p-2 w-full"
                     onBlur={onBlur}
@@ -103,7 +102,7 @@ export default function LoginPage() {
                 control={control}
                 name="password"
                 render={({ field: { onChange, onBlur, value } }) => (
-                  <Input
+                  <TextInput
                     placeholder={t("form.placeholder.password")}
                     className="border border-gray-300 rounded-lg p-2 w-full"
                     onBlur={onBlur}

@@ -1,0 +1,10 @@
+{
+  "bottom": {
+    "navigation": {
+      "home": "홈",
+      "me": "마이페이지",
+      "products": "상품",
+      "schedule": "일정"
+    }
+  }
+}

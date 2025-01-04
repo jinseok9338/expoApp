@@ -3,7 +3,7 @@ import useVersionCheck from "@/hooks/useCheckUpdate";
 import { Button, View } from "react-native";
 import * as Application from "expo-application";
 
-export default function HomeScreen() {
+export default function MeScreen() {
   const { updateApp, isUpdateAvailable } = useVersionCheck();
 
   return (

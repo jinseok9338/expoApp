@@ -1,0 +1,10 @@
+{
+  "bottom": {
+    "navigation": {
+      "home": "home",
+      "me": "me",
+      "products": "products",
+      "schedule": "schedule"
+    }
+  }
+}

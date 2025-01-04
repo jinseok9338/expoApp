@@ -19,7 +19,7 @@ export default function HomeScreen() {
     {
       icon: "notifications",
       label: t("main.navigation.notifications"),
-      route: "/(sub)/notifications",
+      route: "/auth/signUp",
     }, // Push notifications
     {
       icon: "cube",

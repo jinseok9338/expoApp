@@ -73,7 +73,7 @@ const SingleDatePickerInput = ({
         />
         <Text>{value}</Text>
       </Pressable>
-      <Modal visible={modalVisible} animationType="slide" transparent={true}>
+      <Modal visible={modalVisible} animationType="fade" transparent={true}>
         <SafeAreaView
           style={{
             flex: 1,

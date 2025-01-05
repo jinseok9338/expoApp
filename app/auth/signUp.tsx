@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import dayjs from "dayjs";
-import React from "react";
+import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import {
   Alert,
@@ -10,6 +10,8 @@ import {
   Text,
   TextInput,
   View,
+  Modal,
+  Pressable,
 } from "react-native";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
@@ -67,6 +69,8 @@ export default function SignUpPage() {
       startDate: "",
     },
   });
+
+  const [isPickerVisible, setIsPickerVisible] = useState(false);
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
     console.log("Form Data:", data);
@@ -231,27 +235,97 @@ export default function SignUpPage() {
             <Text className="text-sm font-medium text-gray-700">
               {t("signup.form.dealership")}
             </Text>
-            <View className="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
-              <Controller
-                control={control}
-                name="dealership"
-                render={({ field: { onChange, value } }) => (
-                  <Picker
-                    selectedValue={value}
-                    onValueChange={onChange}
-                    style={{ backgroundColor: "transparent" }}
-                  >
-                    <Picker.Item
-                      label={t("signup.form.select-dealership")}
-                      value=""
-                    />
-                    <Picker.Item label="Dealership A" value="dealership_a" />
-                    <Picker.Item label="Dealership B" value="dealership_b" />
-                    <Picker.Item label="Dealership C" value="dealership_c" />
-                  </Picker>
-                )}
-              />
-            </View>
+            <Controller
+              control={control}
+              name="dealership"
+              render={({ field: { onChange, value } }) => (
+                <>
+                  {Platform.OS === "ios" && (
+                    <Pressable
+                      onPress={() => setIsPickerVisible(true)}
+                      className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3"
+                    >
+                      <Text className="text-gray-900">
+                        {value
+                          ? value.replace("dealership_", "Dealership ")
+                          : t("signup.form.select-dealership")}
+                      </Text>
+                    </Pressable>
+                  )}
+
+                  {Platform.OS === "android" ? (
+                    <View className="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
+                      <Picker
+                        selectedValue={value}
+                        onValueChange={onChange}
+                        style={{ backgroundColor: "transparent" }}
+                      >
+                        <Picker.Item
+                          label={t("signup.form.select-dealership")}
+                          value=""
+                        />
+                        <Picker.Item
+                          label="Dealership A"
+                          value="dealership_a"
+                        />
+                        <Picker.Item
+                          label="Dealership B"
+                          value="dealership_b"
+                        />
+                        <Picker.Item
+                          label="Dealership C"
+                          value="dealership_c"
+                        />
+                      </Picker>
+                    </View>
+                  ) : (
+                    <Modal
+                      visible={isPickerVisible}
+                      transparent={true}
+                      animationType="fade"
+                    >
+                      <View className="flex-1 justify-end bg-black/50">
+                        <View className="bg-white w-full">
+                          <View className="flex-row justify-end p-2 border-b border-gray-200">
+                            <Pressable
+                              onPress={() => setIsPickerVisible(false)}
+                            >
+                              <Text className="text-blue-600 font-semibold px-4 py-2">
+                                Done
+                              </Text>
+                            </Pressable>
+                          </View>
+                          <Picker
+                            selectedValue={value}
+                            onValueChange={(itemValue) => {
+                              onChange(itemValue);
+                              setIsPickerVisible(false);
+                            }}
+                          >
+                            <Picker.Item
+                              label={t("signup.form.select-dealership")}
+                              value=""
+                            />
+                            <Picker.Item
+                              label="Dealership A"
+                              value="dealership_a"
+                            />
+                            <Picker.Item
+                              label="Dealership B"
+                              value="dealership_b"
+                            />
+                            <Picker.Item
+                              label="Dealership C"
+                              value="dealership_c"
+                            />
+                          </Picker>
+                        </View>
+                      </View>
+                    </Modal>
+                  )}
+                </>
+              )}
+            />
             {errors.dealership && (
               <Text className="text-red-500 text-sm">
                 {t(errors.dealership.message || "")}

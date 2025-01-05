@@ -13,6 +13,8 @@ import { StatusBar } from "expo-status-bar";
 import * as React from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { useAuth } from "@/hooks/useAuth";
+import { Toast } from "@/components/ui/toast";
+import { toastConfig } from "@/components/ui/toast";
 
 const LIGHT_THEME: Theme = {
   dark: false,
@@ -89,6 +91,7 @@ export default function RootLayout() {
           />
         </QueryClientProvider>
       </ThemeProvider>
+      <Toast config={toastConfig} />
     </GestureHandlerRootView>
   );
 }

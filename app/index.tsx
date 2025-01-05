@@ -1,16 +1,8 @@
-import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  Dimensions,
-  Platform,
-  ScrollView,
-} from "react-native";
-import { Link } from "expo-router";
 import { Button } from "@/components/ui";
 import { useAuth } from "@/hooks/useAuth";
-import { useRouter } from "expo-router";
+import { Redirect, useRouter } from "expo-router";
+import React from "react";
+import { Dimensions, Image, ScrollView, Text, View } from "react-native";
 
 const { width } = Dimensions.get("window");
 
@@ -18,9 +10,13 @@ export default function LandingScreen() {
   const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter();
 
-  // If still loading or user is authenticated, don't show landing page
-  if (isLoading || isAuthenticated) {
+  // If still loading, don't show landing page
+  if (isLoading) {
     return null;
+  }
+
+  if (isAuthenticated) {
+    return <Redirect href="/(main)" />;
   }
 
   return (

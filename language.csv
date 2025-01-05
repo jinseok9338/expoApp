@@ -1,9 +1,44 @@
 category,key,ko,en
+appointment/appointment,address,주소,Address
+appointment/appointment,description,설명,Description
+appointment/appointment,detail_address,상세주소,Detail Address
+appointment/appointment,edit,수정,Edit
+appointment/appointment,endTime,종료 시간,End Time
+appointment/appointment,enter_detail_address,상세주소를 입력해주세요,Enter detail address
+appointment/appointment,from,from,from
+appointment/appointment,location,위치,Location
+appointment/appointment,location,위치,Location
+appointment/appointment,search,검색,Search
+appointment/appointment,startTime,시작 시간,Start Time
+appointment/appointment,time,시간,Time
+appointment/appointment,time_range,시간,Appointment Time
+appointment/appointment,to,to,to
+appointment/appointment,to,종료 시간,To
+appointment/edit,address,주소,Address
+appointment/edit,date,날짜,Date
+appointment/edit,detail_address,상세 주소,Detail Address
+appointment/edit,enter_detail_address,상세주소를 입력해주세요,Enter detail address
+appointment/edit,from,시작 시간,From
+appointment/edit,location,위치,Location
+appointment/edit,save,저장,Save
+appointment/edit,save_success,저장이 완료되었습니다.,Save completed successfully.
+appointment/edit,save_success_description,저장이 완료되었습니다.,Save completed successfully.
+appointment/edit,search,검색,Search
+appointment/edit,select_address,주소 선택,Select Address
+appointment/edit,time,시간,Time
+appointment/edit,time_range,시간,Appointment Time
+appointment/edit,to,종료 시간,To
 bottom/navigation,home,홈,home
 bottom/navigation,me,마이페이지,me
 bottom/navigation,products,상품,products
 bottom/navigation,schedule,일정,schedule
+calendar/appointments,has-appointments,예약 일정이 있습니다.,Appointments
+calendar/appointments,no-appointments,예약 일정이 없습니다.,No appointments for this day
+common,close,닫기,Close
 common,currency,{{n}}원,KRW {{n}}
+common,done,완료,Done
+common,edit,수정,Edit
+common,save,저장,Save
 common/button,cancel,취소,Cancel
 common/button,English,English,English
 common/button,findPassword,비밀번호 찾기,Find Password

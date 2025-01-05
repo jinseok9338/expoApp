@@ -3,8 +3,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { router } from "expo-router";
 
 export const useAuth = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     checkAuth();
@@ -13,7 +13,7 @@ export const useAuth = () => {
   const checkAuth = async () => {
     try {
       const token = await AsyncStorage.getItem("accessToken");
-      setIsAuthenticated(!!token);
+      //   setIsAuthenticated(!!token);
     } catch (error) {
       setIsAuthenticated(false);
     } finally {

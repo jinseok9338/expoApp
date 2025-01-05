@@ -1,4 +1,37 @@
 {
+  "appointment": {
+    "appointment": {
+      "address": "Address",
+      "description": "Description",
+      "detail_address": "Detail Address",
+      "edit": "Edit",
+      "endTime": "End Time",
+      "enter_detail_address": "Enter detail address",
+      "from": "from",
+      "location": "Location",
+      "search": "Search",
+      "startTime": "Start Time",
+      "time": "Time",
+      "time_range": "Appointment Time",
+      "to": "To"
+    },
+    "edit": {
+      "address": "Address",
+      "date": "Date",
+      "detail_address": "Detail Address",
+      "enter_detail_address": "Enter detail address",
+      "from": "From",
+      "location": "Location",
+      "save": "Save",
+      "save_success": "Save completed successfully.",
+      "save_success_description": "Save completed successfully.",
+      "search": "Search",
+      "select_address": "Select Address",
+      "time": "Time",
+      "time_range": "Appointment Time",
+      "to": "To"
+    }
+  },
   "bottom": {
     "navigation": {
       "home": "home",
@@ -7,8 +40,18 @@
       "schedule": "schedule"
     }
   },
+  "calendar": {
+    "appointments": {
+      "has-appointments": "Appointments",
+      "no-appointments": "No appointments for this day"
+    }
+  },
   "common": {
+    "close": "Close",
     "currency": "KRW {{n}}",
+    "done": "Done",
+    "edit": "Edit",
+    "save": "Save",
     "button": {
       "cancel": "Cancel",
       "English": "English",

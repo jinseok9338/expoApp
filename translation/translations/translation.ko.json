@@ -1,4 +1,37 @@
 {
+  "appointment": {
+    "appointment": {
+      "address": "주소",
+      "description": "설명",
+      "detail_address": "상세주소",
+      "edit": "수정",
+      "endTime": "종료 시간",
+      "enter_detail_address": "상세주소를 입력해주세요",
+      "from": "from",
+      "location": "위치",
+      "search": "검색",
+      "startTime": "시작 시간",
+      "time": "시간",
+      "time_range": "시간",
+      "to": "종료 시간"
+    },
+    "edit": {
+      "address": "주소",
+      "date": "날짜",
+      "detail_address": "상세 주소",
+      "enter_detail_address": "상세주소를 입력해주세요",
+      "from": "시작 시간",
+      "location": "위치",
+      "save": "저장",
+      "save_success": "저장이 완료되었습니다.",
+      "save_success_description": "저장이 완료되었습니다.",
+      "search": "검색",
+      "select_address": "주소 선택",
+      "time": "시간",
+      "time_range": "시간",
+      "to": "종료 시간"
+    }
+  },
   "bottom": {
     "navigation": {
       "home": "홈",
@@ -7,8 +40,18 @@
       "schedule": "일정"
     }
   },
+  "calendar": {
+    "appointments": {
+      "has-appointments": "예약 일정이 있습니다.",
+      "no-appointments": "예약 일정이 없습니다."
+    }
+  },
   "common": {
+    "close": "닫기",
     "currency": "{{n}}원",
+    "done": "완료",
+    "edit": "수정",
+    "save": "저장",
     "button": {
       "cancel": "취소",
       "English": "English",

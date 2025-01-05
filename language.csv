@@ -1,4 +1,5 @@
 category,key,ko,en
+,,,
 appointment/appointment,address,주소,Address
 appointment/appointment,description,설명,Description
 appointment/appointment,detail_address,상세주소,Detail Address
@@ -83,6 +84,16 @@ main/navigation,notifications,알림,notifications
 main/navigation,products,제품관리,products
 main/navigation,regular-checks,정기점검 등록,regular-checks
 main/navigation,support-center,지원센터,support-center
+me/help_center,title,도움말,Help
+me/invites,title,친구초대,Invite Friends
+me/logout,title,로그아웃,Logout
+me/privacy_policy,title,개인정보처리방침,Privacy Policy
+me/settings,title,설정,Settings
+me/your_profile,title,프로필,Profile
+settings/notifications,title,알림,Notifications
+settings/permissions,title,권한,Permissions
+settings/update,title,업데이트,Update
+settings/version,title,버전,Version
 signup/form,birthdate,생년월일,Birthdate
 signup/form,birthdate-invalid,유효한 생년월일을 선택하세요.,Please select a valid birth date.
 signup/form,birthdate-invalid,유효한 생년월일을 선택하세요.,Please select a valid birth date.

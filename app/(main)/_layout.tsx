@@ -22,7 +22,6 @@ export default function TabLayout() {
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
-            // Use a transparent background on iOS to show the blur effect
             position: "absolute",
           },
           default: {},
@@ -73,6 +72,30 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="appointments/[id]/edit"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="(me)/profile"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="(me)/settings"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="(me)/help"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="(me)/privacy"
         options={{
           href: null,
         }}

@@ -1,4 +1,7 @@
 {
+  "": {
+    "": ""
+  },
   "appointment": {
     "appointment": {
       "address": "Address",
@@ -116,6 +119,40 @@
       "products": "products",
       "regular-checks": "regular-checks",
       "support-center": "support-center"
+    }
+  },
+  "me": {
+    "help_center": {
+      "title": "Help"
+    },
+    "invites": {
+      "title": "Invite Friends"
+    },
+    "logout": {
+      "title": "Logout"
+    },
+    "privacy_policy": {
+      "title": "Privacy Policy"
+    },
+    "settings": {
+      "title": "Settings"
+    },
+    "your_profile": {
+      "title": "Profile"
+    }
+  },
+  "settings": {
+    "notifications": {
+      "title": "Notifications"
+    },
+    "permissions": {
+      "title": "Permissions"
+    },
+    "update": {
+      "title": "Update"
+    },
+    "version": {
+      "title": "Version"
     }
   },
   "signup": {

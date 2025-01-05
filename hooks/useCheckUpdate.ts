@@ -1,77 +1,60 @@
-import * as Updates from "expo-updates";
-import * as Application from "expo-application";
-import { Platform, Linking } from "react-native";
-import Constants, { ExecutionEnvironment } from "expo-constants";
 import { useState } from "react";
+import * as Updates from "expo-updates";
+import Constants from "expo-constants";
+import { Platform } from "react-native";
+import { Linking } from "react-native";
 
-const useVersionCheck = () => {
-  const { isUpdateAvailable } = Updates.useUpdates();
+interface UpdateCheckResult {
+  isAvailable: boolean;
+  version?: string;
+}
+
+export default function useCheckUpdate() {
+  const [isUpdateAvailable, setIsUpdateAvailable] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
+  const currentVersion = Constants.expoConfig?.version ?? "1.0.0";
+  const storeUrl =
+    Platform.select({
+      ios: "https://apps.apple.com/app/your-app-id",
+      android: "https://play.google.com/store/apps/details?id=your.app.package",
+    }) ?? "";
 
-  const isExpoGo =
-    Constants.executionEnvironment === ExecutionEnvironment.StoreClient;
-
-  const getStorePageUrl = () => {
-    return Platform.select({
-      ios: `https://apps.apple.com/app/id${Application.applicationId}`,
-      android: `market://details?id=${Application.applicationId}`,
-      default: null,
-    });
-  };
-
-  const openStore = async () => {
+  const checkUpdates = async (): Promise<UpdateCheckResult> => {
     try {
-      const url = getStorePageUrl();
-
-      if (!url) {
-        throw new Error("Unsupported platform for store navigation");
-      }
-
-      const canOpen = await Linking.canOpenURL(url);
-
-      if (!canOpen) {
-        if (Platform.OS === "android") {
-          await Linking.openURL(
-            `https://play.google.com/store/apps/details?id=${Application.applicationId}`
-          );
-          return;
-        }
-        throw new Error("Cannot open store URL");
-      }
-
-      await Linking.openURL(url);
+      const update = await Updates.checkForUpdateAsync();
+      setIsUpdateAvailable(update.isAvailable);
+      return { isAvailable: update.isAvailable };
     } catch (error) {
-      console.error("Error opening store:", error);
-      throw error;
+      console.error("Error checking for updates:", error);
+      return { isAvailable: false };
     }
   };
 
   const updateApp = async () => {
-    if (isExpoGo) {
-      console.log("Updates are not available in Expo Go");
-      return;
-    }
     try {
-      if (isUpdateAvailable) {
-        setIsUpdating(true);
-        await Updates.fetchUpdateAsync();
-        await Updates.reloadAsync();
-        setIsUpdating(false);
-      }
+      setIsUpdating(true);
+      await Updates.fetchUpdateAsync();
+      await Updates.reloadAsync();
     } catch (error) {
       console.error("Error updating app:", error);
-      throw error;
+    } finally {
+      setIsUpdating(false);
+    }
+  };
+
+  const openStore = async () => {
+    if (storeUrl) {
+      await Linking.openURL(storeUrl);
     }
   };
 
   return {
     isUpdateAvailable,
+    currentVersion,
+    storeUrl,
+    checkUpdates,
     updateApp,
-    checkUpdates: Updates.checkForUpdateAsync,
     openStore,
-    isExpoGo,
     isUpdating,
   };
-};
-
-export default useVersionCheck;
+}

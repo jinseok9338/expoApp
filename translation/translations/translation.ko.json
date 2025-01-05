@@ -1,4 +1,7 @@
 {
+  "": {
+    "": ""
+  },
   "appointment": {
     "appointment": {
       "address": "주소",
@@ -116,6 +119,40 @@
       "products": "제품관리",
       "regular-checks": "정기점검 등록",
       "support-center": "지원센터"
+    }
+  },
+  "me": {
+    "help_center": {
+      "title": "도움말"
+    },
+    "invites": {
+      "title": "친구초대"
+    },
+    "logout": {
+      "title": "로그아웃"
+    },
+    "privacy_policy": {
+      "title": "개인정보처리방침"
+    },
+    "settings": {
+      "title": "설정"
+    },
+    "your_profile": {
+      "title": "프로필"
+    }
+  },
+  "settings": {
+    "notifications": {
+      "title": "알림"
+    },
+    "permissions": {
+      "title": "권한"
+    },
+    "update": {
+      "title": "업데이트"
+    },
+    "version": {
+      "title": "버전"
     }
   },
   "signup": {

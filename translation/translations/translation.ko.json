@@ -74,5 +74,42 @@
       "regular-checks": "정기점검 등록",
       "support-center": "지원센터"
     }
+  },
+  "signup": {
+    "form": {
+      "birthdate": "생년월일",
+      "birthdate-invalid": "유효한 생년월일을 선택하세요.",
+      "birthdate-required": "생년월일을 선택하세요.",
+      "confirm-password": "비밀번호 확인",
+      "confirm-password-placeholder": "비밀번호를 다시 입력하세요",
+      "dealership": "대리점",
+      "dealership-placeholder": "대리점을 선택하세요",
+      "dealership-required": "대리점을 선택하세요.",
+      "email": "이메일",
+      "email-invalid": "유효한 이메일을 입력하세요.",
+      "email-placeholder": "이메일을 입력하세요",
+      "email-required": "이메일을 입력하세요.",
+      "enddate-invalid": "유효한 종료일을 선택하세요.",
+      "enddate-required": "종료일을 선택하세요.",
+      "name": "이름",
+      "name-placeholder": "이름을 입력하세요",
+      "name-required": "이름을 입력하세요.",
+      "password": "비밀번호",
+      "password-min": "비밀번호는 최소 8자 이상이어야 합니다.",
+      "password-placeholder": "비밀번호를 입력하세요",
+      "password-required": "비밀번호를 입력하세요.",
+      "phone-required": "연락처를 입력하세요.",
+      "registration-date": "등록일",
+      "registration-date2": "등록일2",
+      "registration-date3": "등록일3",
+      "select-dealership": "대리점을 선택하세요",
+      "startdate-invalid": "유효한 입사일을 선택하세요.",
+      "startdate-required": "입사일을 선택하세요.",
+      "submit": "회원가입",
+      "subtitle": "서비스 이용을 위한 회원가입",
+      "success-message": "회원가입이 성공적으로 완료되었습니다.",
+      "success-title": "회원가입 완료",
+      "title": "회원가입"
+    }
   }
 }

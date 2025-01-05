@@ -9,58 +9,47 @@ import {
   ScrollView,
   Text,
   TextInput,
-  TouchableOpacity,
   View,
 } from "react-native";
+import { useTranslation } from "react-i18next";
 import { z } from "zod";
-
-import DateRangePickerInput from "@/components/ui/date-range-picker/date-range-picker";
+import { Picker } from "@react-native-picker/picker";
+import { Button } from "@/components/ui";
 import SingleDatePickerInput from "@/components/ui/datePicker/date-picker";
-import MultiDatePickerInput from "@/components/ui/datePicker/multiple-date-picker";
+import { cn } from "@/lib/utils";
 
 export const formSchema = z.object({
   email: z
     .string()
-    .email({ message: "유효한 이메일을 입력하세요." })
-    .nonempty({ message: "이메일을 입력하세요." }),
+    .email({ message: "signup.form.email-invalid" })
+    .nonempty({ message: "signup.form.email-required" }),
   password: z
     .string()
-    .min(8, { message: "비밀번호는 최소 8자 이상이어야 합니다." })
-    .nonempty({ message: "비밀번호를 입력하세요." }),
+    .min(8, { message: "signup.form.password-min" })
+    .nonempty({ message: "signup.form.password-required" }),
   confirmPassword: z.string(),
-  name: z.string().nonempty({ message: "이름을 입력하세요." }),
+  name: z.string().nonempty({ message: "signup.form.name-required" }),
   birthDate: z
     .string()
-    .nonempty({ message: "생년월일을 선택하세요." })
+    .nonempty({ message: "signup.form.birthdate-required" })
     .refine((value) => dayjs(value, "YYYY-MM-DD").isValid(), {
-      message: "생년월일을 선택하세요.",
+      message: "signup.form.birthdate-invalid",
     }),
-  phoneNumber: z.string().nonempty({ message: "연락처를 입력하세요." }),
-  dealership: z.string().nonempty({ message: "대리점을 선택하세요." }),
-  startDate2: z.array(z.string()).nonempty({ message: "입사일을 선택하세요." }),
+  phoneNumber: z.string().nonempty({ message: "signup.form.phone-required" }),
+  dealership: z
+    .string()
+    .nonempty({ message: "signup.form.dealership-required" }),
   startDate: z
     .string()
-    .nonempty({ message: "입사일을 선택하세요." })
+    .nonempty({ message: "signup.form.startdate-required" })
     .refine((value) => dayjs(value, "YYYY-MM-DD").isValid(), {
-      message: "입사일을 선택하세요.",
+      message: "signup.form.startdate-invalid",
     }),
-  startDate3: z.object({
-    startDate: z
-      .string()
-      .nonempty({ message: "입사일을 선택하세요." })
-      .refine((value) => dayjs(value, "YYYY-MM-DD").isValid(), {
-        message: "입사일을 선택하세요.",
-      }),
-    endDate: z
-      .string()
-      .nonempty({ message: "종료일을 선택하세요." })
-      .refine((value) => dayjs(value, "YYYY-MM-DD").isValid(), {
-        message: "종료일을 선택하세요.",
-      }),
-  }),
 });
 
 export default function SignUpPage() {
+  const { t } = useTranslation();
+
   const {
     control,
     handleSubmit,
@@ -74,213 +63,230 @@ export default function SignUpPage() {
       name: "",
       birthDate: "",
       phoneNumber: "",
-      dealership: null,
+      dealership: "",
       startDate: "",
-      startDate2: [dayjs().format("YYYY-MM-DD")],
-      startDate3: {
-        startDate: dayjs().format("YYYY-MM-DD"),
-        endDate: dayjs().add(1, "day").format("YYYY-MM-DD"),
-      },
     },
   });
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
     console.log("Form Data:", data);
-    Alert.alert("회원가입 완료", "회원가입이 성공적으로 완료되었습니다.");
+    Alert.alert(
+      t("signup.form.success-title"),
+      t("signup.form.success-message")
+    );
   };
 
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      className="flex-1 bg-white"
+      className="flex-1 bg-gray-50"
     >
       <ScrollView
+        className="flex-1"
         contentContainerStyle={{
-          padding: 16,
-          justifyContent: "center",
-          alignItems: "center",
+          paddingVertical: 32,
+          paddingHorizontal: 16,
         }}
       >
-        {/* Form Title */}
-        <Text className="text-2xl font-bold mb-6">회원가입</Text>
-
-        {/* Email */}
-        <View className="mb-4 w-full max-w-sm flex-col gap-2">
-          <Text>이메일</Text>
-          <Controller
-            control={control}
-            name="email"
-            render={({ field: { onChange, value } }) => (
-              <TextInput
-                className="border border-gray-300 rounded-lg p-2 w-full"
-                placeholder="Write some stuff..."
-                value={value}
-                onChangeText={onChange}
-                aria-labelledby="inputLabel"
-                aria-errormessage="inputError"
-              />
-            )}
-          />
-          {errors.email && (
-            <Text className="text-red-500 text-sm">{errors.email.message}</Text>
-          )}
+        <View className="items-center mb-8">
+          <Text className="text-3xl font-bold text-gray-900">
+            {t("signup.form.title")}
+          </Text>
+          <Text className="mt-2 text-gray-600">
+            {t("signup.form.subtitle")}
+          </Text>
         </View>
 
-        {/* Password */}
-        <View className="mb-4 w-full max-w-sm flex-col gap-2">
-          <Text>비밀번호</Text>
-          <Controller
-            control={control}
-            name="password"
-            render={({ field: { onChange, value } }) => (
-              <TextInput
-                placeholder="Write some stuff..."
-                value={value}
-                className="border border-gray-300 rounded-lg p-2 w-full"
-                onChangeText={onChange}
-                aria-labelledby="inputLabel"
-                aria-errormessage="inputError"
-              />
-            )}
-          />
-          {errors.password && (
-            <Text className="text-red-500 text-sm">
-              {errors.password.message}
-            </Text>
+        <View
+          className={cn(
+            "bg-white rounded-3xl p-6 mx-4",
+            Platform.OS === "ios" ? "shadow-sm" : "shadow-xl"
           )}
-        </View>
-
-        {/* Confirm Password */}
-        <View className="mb-4 w-full max-w-sm flex-col gap-2">
-          <Text>비밀번호 확인</Text>
-          <Controller
-            control={control}
-            name="confirmPassword"
-            render={({ field: { onChange, value } }) => (
-              <TextInput
-                placeholder="Write some stuff..."
-                value={value}
-                className="border border-gray-300 rounded-lg p-2 w-full"
-                onChangeText={onChange}
-                aria-labelledby="inputLabel"
-                aria-errormessage="inputError"
-              />
-            )}
-          />
-          {errors.confirmPassword && (
-            <Text className="text-red-500 text-sm">
-              {errors.confirmPassword.message}
-            </Text>
-          )}
-        </View>
-
-        {/* Name */}
-        <View className="mb-4 w-full max-w-sm flex-col gap-2">
-          <Text>이름</Text>
-          <Controller
-            control={control}
-            name="name"
-            render={({ field: { onChange, value } }) => (
-              <TextInput
-                className="border border-gray-300 rounded-lg p-2 w-full"
-                placeholder="Write some stuff..."
-                value={value}
-                onChangeText={onChange}
-                aria-labelledby="inputLabel"
-                aria-errormessage="inputError"
-              />
-            )}
-          />
-          {errors.name && (
-            <Text className="text-red-500 text-sm">{errors.name.message}</Text>
-          )}
-        </View>
-
-        {/* Confirm Password */}
-        <View className="mb-4 w-full max-w-sm flex-col gap-2">
-          <Text>비밀번호 확인</Text>
-          <Controller
-            control={control}
-            name="confirmPassword"
-            render={({ field: { onChange, value } }) => (
-              <TextInput
-                className="border border-gray-300 rounded-lg p-2 w-full"
-                placeholder="Write some stuff..."
-                value={value}
-                onChangeText={onChange}
-                aria-labelledby="inputLabel"
-                aria-errormessage="inputError"
-              />
-            )}
-          />
-          {errors.confirmPassword && (
-            <Text className="text-red-500 text-sm">
-              {errors.confirmPassword.message}
-            </Text>
-          )}
-        </View>
-
-        <View className="mb-4 w-full max-w-sm flex-col gap-2">
-          <Text>등록일</Text>
-          <Controller
-            control={control}
-            name="startDate"
-            render={({ field: { onChange, value } }) => (
-              <SingleDatePickerInput
-                onChange={onChange}
-                value={value ? value : dayjs().format("YYYY-MM-DD")}
-              />
-            )}
-          />
-          {errors.confirmPassword && (
-            <Text className="text-red-500 text-sm">
-              {errors.confirmPassword.message}
-            </Text>
-          )}
-        </View>
-
-        <View className="mb-4 w-full max-w-sm flex-col gap-2">
-          <Text>등록일2</Text>
-          <Controller
-            control={control}
-            name="startDate2"
-            render={({ field: { onChange, value } }) => (
-              <MultiDatePickerInput onChange={onChange} values={value} />
-            )}
-          />
-          {errors.confirmPassword && (
-            <Text className="text-red-500 text-sm">
-              {errors.confirmPassword.message}
-            </Text>
-          )}
-        </View>
-
-        <View className="mb-4 w-full max-w-sm flex-col gap-2">
-          <Text>등록일3</Text>
-          <Controller
-            control={control}
-            name="startDate3"
-            render={({ field: { onChange, value } }) => (
-              <DateRangePickerInput
-                onChange={onChange}
-                startDate={value.startDate}
-                endDate={value.endDate}
-              />
-            )}
-          />
-          {errors.confirmPassword && (
-            <Text className="text-red-500 text-sm">
-              {errors.confirmPassword.message}
-            </Text>
-          )}
-        </View>
-
-        <TouchableOpacity
-          onPress={handleSubmit(onSubmit)}
-          className="bg-blue-600 rounded-lg p-3 items-center w-full max-w-sm"
         >
-          <Text className="text-white text-lg">회원가입</Text>
-        </TouchableOpacity>
+          {/* Email */}
+          <View className="space-y-4 mb-6">
+            <Text className="text-sm font-medium text-gray-700">
+              {t("signup.form.email")}
+            </Text>
+            <Controller
+              control={control}
+              name="email"
+              render={({ field: { onChange, value } }) => (
+                <TextInput
+                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200"
+                  placeholder={t("signup.form.email-placeholder")}
+                  value={value}
+                  onChangeText={onChange}
+                  autoCapitalize="none"
+                  keyboardType="email-address"
+                />
+              )}
+            />
+            {errors.email && (
+              <Text className="text-red-500 text-sm">
+                {t(errors.email.message || "")}
+              </Text>
+            )}
+          </View>
+
+          {/* Password */}
+          <View className="space-y-4 mb-6">
+            <Text className="text-sm font-medium text-gray-700">
+              {t("signup.form.password")}
+            </Text>
+            <Controller
+              control={control}
+              name="password"
+              render={({ field: { onChange, value } }) => (
+                <TextInput
+                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200"
+                  placeholder={t("signup.form.password-placeholder")}
+                  value={value}
+                  onChangeText={onChange}
+                  secureTextEntry
+                />
+              )}
+            />
+            {errors.password && (
+              <Text className="text-red-500 text-sm">
+                {t(errors.password.message || "")}
+              </Text>
+            )}
+          </View>
+
+          {/* Confirm Password */}
+          <View className="space-y-4 mb-6">
+            <Text className="text-sm font-medium text-gray-700">
+              {t("signup.form.confirm-password")}
+            </Text>
+            <Controller
+              control={control}
+              name="confirmPassword"
+              render={({ field: { onChange, value } }) => (
+                <TextInput
+                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200"
+                  placeholder={t("signup.form.confirm-password-placeholder")}
+                  value={value}
+                  onChangeText={onChange}
+                  secureTextEntry
+                />
+              )}
+            />
+            {errors.confirmPassword && (
+              <Text className="text-red-500 text-sm">
+                {t(errors.confirmPassword.message || "")}
+              </Text>
+            )}
+          </View>
+
+          {/* Name */}
+          <View className="space-y-4 mb-6">
+            <Text className="text-sm font-medium text-gray-700">
+              {t("signup.form.name")}
+            </Text>
+            <Controller
+              control={control}
+              name="name"
+              render={({ field: { onChange, value } }) => (
+                <TextInput
+                  className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200"
+                  placeholder={t("signup.form.name-placeholder")}
+                  value={value}
+                  onChangeText={onChange}
+                />
+              )}
+            />
+            {errors.name && (
+              <Text className="text-red-500 text-sm">
+                {t(errors.name.message || "")}
+              </Text>
+            )}
+          </View>
+
+          {/* Birth Date */}
+          <View className="space-y-4 mb-6">
+            <Text className="text-sm font-medium text-gray-700">
+              {t("signup.form.birthdate")}
+            </Text>
+            <Controller
+              control={control}
+              name="birthDate"
+              render={({ field: { onChange, value } }) => (
+                <SingleDatePickerInput
+                  onChange={onChange}
+                  value={value ? value : dayjs().format("YYYY-MM-DD")}
+                  maxDate={dayjs().subtract(18, "years").toDate()}
+                />
+              )}
+            />
+            {errors.birthDate && (
+              <Text className="text-red-500 text-sm">
+                {t(errors.birthDate.message || "")}
+              </Text>
+            )}
+          </View>
+
+          {/* Dealership */}
+          <View className="space-y-4 mb-6">
+            <Text className="text-sm font-medium text-gray-700">
+              {t("signup.form.dealership")}
+            </Text>
+            <View className="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
+              <Controller
+                control={control}
+                name="dealership"
+                render={({ field: { onChange, value } }) => (
+                  <Picker
+                    selectedValue={value}
+                    onValueChange={onChange}
+                    style={{ backgroundColor: "transparent" }}
+                  >
+                    <Picker.Item
+                      label={t("signup.form.select-dealership")}
+                      value=""
+                    />
+                    <Picker.Item label="Dealership A" value="dealership_a" />
+                    <Picker.Item label="Dealership B" value="dealership_b" />
+                    <Picker.Item label="Dealership C" value="dealership_c" />
+                  </Picker>
+                )}
+              />
+            </View>
+            {errors.dealership && (
+              <Text className="text-red-500 text-sm">
+                {t(errors.dealership.message || "")}
+              </Text>
+            )}
+          </View>
+
+          {/* Date Inputs */}
+          <View className="space-y-6 mb-6">
+            <View className="space-y-4">
+              <Text className="text-sm font-medium text-gray-700">
+                {t("signup.form.registration-date")}
+              </Text>
+              <Controller
+                control={control}
+                name="startDate"
+                render={({ field: { onChange, value } }) => (
+                  <SingleDatePickerInput
+                    onChange={onChange}
+                    value={value ? value : dayjs().format("YYYY-MM-DD")}
+                  />
+                )}
+              />
+            </View>
+          </View>
+
+          <Button
+            onPress={handleSubmit(onSubmit)}
+            className="bg-blue-600 rounded-lg items-center w-full max-w-sm"
+          >
+            <Text className="text-white text-center font-semibold text-lg">
+              {t("signup.form.submit")}
+            </Text>
+          </Button>
+        </View>
       </ScrollView>
     </KeyboardAvoidingView>
   );

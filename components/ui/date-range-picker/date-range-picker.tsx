@@ -60,7 +60,7 @@ const DateRangePickerInput = ({
     startDate: dayjs(initialStartDate).toDate(),
     endDate: dayjs(initialEndDate).toDate(),
   });
-
+  const disabled = !range.startDate || !range.endDate;
   return (
     <>
       <Pressable
@@ -127,6 +127,7 @@ const DateRangePickerInput = ({
               }}
             />
             <Button
+              disabled={disabled}
               onPress={() => {
                 setModalVisible(false);
                 onChange({
@@ -139,7 +140,7 @@ const DateRangePickerInput = ({
                 });
               }}
               variant="solid"
-              className="bg-blue-600  rounded-md"
+              className={cn("bg-blue-600 rounded-md", disabled && "opacity-50")}
             >
               <Text className="text-white text-lg">저장</Text>
             </Button>

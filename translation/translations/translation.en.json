@@ -74,5 +74,42 @@
       "regular-checks": "regular-checks",
       "support-center": "support-center"
     }
+  },
+  "signup": {
+    "form": {
+      "birthdate": "Birthdate",
+      "birthdate-invalid": "Please select a valid birth date.",
+      "birthdate-required": "Please select your birth date.",
+      "confirm-password": "Confirm Password",
+      "confirm-password-placeholder": "Re-enter your password",
+      "dealership": "Dealership",
+      "dealership-placeholder": "Select a dealership",
+      "dealership-required": "Please select a dealership.",
+      "email": "Email",
+      "email-invalid": "Please enter a valid email.",
+      "email-placeholder": "Enter your email",
+      "email-required": "Please enter your email.",
+      "enddate-invalid": "Please select a valid end date.",
+      "enddate-required": "Please select an end date.",
+      "name": "Name",
+      "name-placeholder": "Enter your name",
+      "name-required": "Please enter your name.",
+      "password": "Password",
+      "password-min": "Password must be at least 8 characters.",
+      "password-placeholder": "Enter your password",
+      "password-required": "Please enter your password.",
+      "phone-required": "Please enter your phone number.",
+      "registration-date": "Registration Date",
+      "registration-date2": "Registration Date 2",
+      "registration-date3": "Registration Date 3",
+      "select-dealership": "Select a dealership",
+      "startdate-invalid": "Please select a valid start date.",
+      "startdate-required": "Please select a start date.",
+      "submit": "Sign Up",
+      "subtitle": "Sign up for service use",
+      "success-message": "Sign up completed successfully.",
+      "success-title": "Sign Up Complete",
+      "title": "Sign Up"
+    }
   }
 }

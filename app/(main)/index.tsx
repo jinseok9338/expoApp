@@ -1,12 +1,13 @@
-import { View, Text, TouchableOpacity } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { useRouter } from "expo-router"; // Ensure you have Expo Router installed
+import { Box } from "@/components/ui";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { cn } from "@/lib/utils";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { Link } from "expo-router"; // Ensure you have Expo Router installed
 import { useTranslation } from "react-i18next";
+import { Platform, Text, View } from "react-native";
 
 export default function HomeScreen() {
-  const router = useRouter(); // Used for navigation
   const colorScheme = useColorScheme();
   const { t } = useTranslation();
 
@@ -60,22 +61,25 @@ export default function HomeScreen() {
 
   return (
     <View className="flex-1 bg-white">
-      <View className="flex-wrap flex-row justify-center items-center p-4">
+      <View className="flex-wrap flex-row justify-center items-center gap-3 p-4">
         {icons.map((item, index) => (
-          <TouchableOpacity
-            key={index}
-            onPress={() => router.push(item.route)}
-            className="w-1/3 p-2 flex justify-center items-center"
-          >
-            <Ionicons
-              name={item.icon}
-              size={40}
-              color={Colors[colorScheme.colorScheme ?? "light"].tint}
-            />
-            <Text className="text-center text-gray-700 text-sm mt-2">
-              {item.label}
-            </Text>
-          </TouchableOpacity>
+          <Link href={item.route} key={item.route}>
+            <Box
+              className={cn(
+                "flex size-32 flex-col items-center justify-center rounded-xl bg-white p-6",
+                Platform.OS === "ios" ? "shadow-sm" : "shadow-xl"
+              )}
+            >
+              <Ionicons
+                name={item.icon}
+                size={40}
+                color={Colors[colorScheme.colorScheme ?? "light"].tint}
+              />
+              <Text className="text-center text-gray-700 text-sm mt-2">
+                {item.label}
+              </Text>
+            </Box>
+          </Link>
         ))}
       </View>
     </View>

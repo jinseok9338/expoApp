@@ -15,6 +15,8 @@ import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
+import { Box } from "@/components/ui";
+import { cn } from "@/lib/utils";
 
 export const formSchema = z.object({
   email: z
@@ -67,7 +69,12 @@ export default function LoginPage() {
           />
 
           {/* Login Form */}
-          <View className="w-full max-w-sm">
+          <Box
+            className={cn(
+              "w-full max-w-sm rounded-2xl bg-white p-6",
+              Platform.OS === "ios" ? "shadow-sm" : "shadow-lg"
+            )}
+          >
             {/* Email Input */}
             <View className="mb-4">
               <Text className="text-gray-700 text-sm mb-2">
@@ -122,27 +129,26 @@ export default function LoginPage() {
             {/* Submit Button */}
             <TouchableOpacity
               onPress={handleSubmit(onSubmit)}
-              className="bg-blue-600 rounded-lg p-3 items-center"
+              className="bg-blue-600 rounded-lg p-2 items-center"
             >
               <Text className="text-white text-lg">
                 {t("common.button.login")}
               </Text>
             </TouchableOpacity>
-          </View>
-
-          {/* Links */}
-          <View className="flex-col mt-4 space-x-4">
-            <TouchableOpacity>
-              <Text className="text-blue-600 text-sm">
-                {t("login.form.findId")}
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text className="text-blue-600 text-sm">
-                {t("login.form.findPassword")}
-              </Text>
-            </TouchableOpacity>
-          </View>
+            {/* Links */}
+            <View className="flex-col mt-4 space-x-4">
+              <TouchableOpacity>
+                <Text className="text-blue-600 text-sm">
+                  {t("login.form.findId")}
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text className="text-blue-600 text-sm">
+                  {t("login.form.findPassword")}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </Box>
         </ScrollView>
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>

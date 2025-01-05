@@ -89,6 +89,10 @@ me/logout,title,로그아웃,Logout
 me/privacy_policy,title,개인정보처리방침,Privacy Policy
 me/settings,title,설정,Settings
 me/your_profile,title,프로필,Profile
+scanner/scan,align_code,코드를 맞춰주세요,Align the code
+scanner/scan,no_permission,카메라 권한이 없습니다.,Camera permission is not granted
+scanner/scan,requesting_permission,카메라 권한을 요청하고 있습니다.,Requesting camera permission
+scanner/scan,scan_again,다시 스캔,Scan again
 settings/notifications,title,알림,Notifications
 settings/permissions,title,권한,Permissions
 settings/update,title,업데이트,Update

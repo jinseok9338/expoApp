@@ -1,7 +1,4 @@
 {
-  "": {
-    "": ""
-  },
   "appointment": {
     "appointment": {
       "address": "Address",
@@ -139,6 +136,14 @@
     },
     "your_profile": {
       "title": "Profile"
+    }
+  },
+  "scanner": {
+    "scan": {
+      "align_code": "Align the code",
+      "no_permission": "Camera permission is not granted",
+      "requesting_permission": "Requesting camera permission",
+      "scan_again": "Scan again"
     }
   },
   "settings": {

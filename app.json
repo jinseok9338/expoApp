@@ -41,7 +41,8 @@
           "photosPermission": "The app needs access to your photos to set profile picture.",
           "cameraPermission": "The app needs access to your camera to take profile picture."
         }
-      ]
+      ],
+      "expo-barcode-scanner"
     ],
     "experiments": {
       "typedRoutes": true
@@ -57,7 +58,6 @@
     "runtimeVersion": {
       "policy": "appVersion"
     },
-
     "updates": {
       "url": "https://u.expo.dev/e8f6e957-6fab-4ec7-bd9a-bcdceb0da8d8"
     }

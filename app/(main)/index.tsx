@@ -5,17 +5,23 @@ import { cn } from "@/lib/utils";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Link } from "expo-router"; // Ensure you have Expo Router installed
 import { useTranslation } from "react-i18next";
-import { Platform, Text, View } from "react-native";
+import { Platform, Text, View, useWindowDimensions } from "react-native";
+import { useState } from "react";
 
 export default function HomeScreen() {
   const colorScheme = useColorScheme();
   const { t } = useTranslation();
+  const { width } = useWindowDimensions();
+  const numColumns = 3;
+  const padding = 16;
+  const containerWidth = width - padding * 2;
+  const boxSize = (containerWidth - (numColumns - 1) * 12) / numColumns; // Account for gap between boxes
 
   const icons = [
     {
       icon: "barcode",
       label: t("main.navigation.barcode"),
-      route: "/auth/login",
+      route: "/(sub)/scan",
     }, // Barcode icon for text or scan
     {
       icon: "notifications",
@@ -59,28 +65,65 @@ export default function HomeScreen() {
     }, // Support center
   ] as const;
 
+  const renderItem = ({ item }: { item: (typeof icons)[number] }) => (
+    <Link
+      href={item.route}
+      key={item.route}
+      style={{
+        width: boxSize,
+        padding: 6,
+      }}
+    >
+      <Box
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "white",
+          width: boxSize - 12, // Account for Link padding
+          height: boxSize - 12,
+          borderRadius: 12,
+          ...Platform.select({
+            ios: {
+              shadowColor: "#000",
+              shadowOffset: { width: 0, height: 1 },
+              shadowOpacity: 0.2,
+              shadowRadius: 1.41,
+            },
+            android: {
+              elevation: 2,
+            },
+          }),
+        }}
+      >
+        <Ionicons
+          name={item.icon}
+          size={32} // Reduced icon size to fit 3 columns better
+          color={Colors[colorScheme.colorScheme ?? "light"].tint}
+        />
+        <Text
+          style={{
+            textAlign: "center",
+            color: "#374151",
+            fontSize: 12, // Reduced font size to fit 3 columns better
+            marginTop: 8,
+          }}
+        >
+          {item.label}
+        </Text>
+      </Box>
+    </Link>
+  );
+
   return (
-    <View className="flex-1 bg-white">
-      <View className="flex-wrap flex-row justify-center items-center gap-3 p-4">
-        {icons.map((item, index) => (
-          <Link href={item.route} key={item.route}>
-            <Box
-              className={cn(
-                "flex size-32 flex-col items-center justify-center rounded-xl bg-white p-6",
-                Platform.OS === "ios" ? "shadow-sm" : "shadow-xl"
-              )}
-            >
-              <Ionicons
-                name={item.icon}
-                size={40}
-                color={Colors[colorScheme.colorScheme ?? "light"].tint}
-              />
-              <Text className="text-center text-gray-700 text-sm mt-2">
-                {item.label}
-              </Text>
-            </Box>
-          </Link>
-        ))}
+    <View style={{ flex: 1, backgroundColor: "white" }}>
+      <View
+        style={{
+          flexDirection: "row",
+          flexWrap: "wrap",
+          padding: 16,
+        }}
+      >
+        {icons.map((icon) => renderItem({ item: icon }))}
       </View>
     </View>
   );

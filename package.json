@@ -139,7 +139,8 @@
     "doctor": {
       "reactNativeDirectoryCheck": {
         "exclude": [
-          "lucide-react-native"
+          "lucide-react-native",
+          "react-native-maps"
         ],
         "listUnknownPackages": false
       }

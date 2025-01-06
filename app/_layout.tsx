@@ -89,9 +89,9 @@ export default function RootLayout() {
               animation: "slide_from_right",
             }}
           />
+          <Toast config={toastConfig} />
         </QueryClientProvider>
       </ThemeProvider>
-      <Toast config={toastConfig} />
     </GestureHandlerRootView>
   );
 }

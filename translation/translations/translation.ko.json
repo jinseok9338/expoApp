@@ -1,4 +1,7 @@
 {
+  "": {
+    "": ""
+  },
   "appointment": {
     "appointment": {
       "address": "주소",
@@ -196,5 +199,10 @@
       "success-title": "회원가입 완료",
       "title": "회원가입"
     }
+  },
+  "support": {
+    "findAnswersBelow": "답변 찾기",
+    "frequentlyAskedQuestions": "자주 묻는 질문",
+    "haveMoreQuestions": "더 많은 질문이 있으신가요?"
   }
 }

@@ -1,4 +1,7 @@
 {
+  "": {
+    "": ""
+  },
   "appointment": {
     "appointment": {
       "address": "Address",
@@ -196,5 +199,10 @@
       "success-title": "Sign Up Complete",
       "title": "Sign Up"
     }
+  },
+  "support": {
+    "findAnswersBelow": "Find Answer",
+    "frequentlyAskedQuestions": "Frequently Asked Questions",
+    "haveMoreQuestions": "Have more questions?"
   }
 }

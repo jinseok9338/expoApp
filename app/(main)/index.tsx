@@ -1,12 +1,10 @@
 import { Box } from "@/components/ui";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { cn } from "@/lib/utils";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Link } from "expo-router"; // Ensure you have Expo Router installed
 import { useTranslation } from "react-i18next";
 import { Platform, Text, View, useWindowDimensions } from "react-native";
-import { useState } from "react";
 
 export default function HomeScreen() {
   const colorScheme = useColorScheme();
@@ -26,7 +24,7 @@ export default function HomeScreen() {
     {
       icon: "notifications",
       label: t("main.navigation.notifications"),
-      route: "/auth/signUp",
+      route: "/(sub)/notifications",
     }, // Push notifications
     {
       icon: "cube",

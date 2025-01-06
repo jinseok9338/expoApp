@@ -221,7 +221,7 @@ export default function EditAppointmentScreen() {
           onRequestClose={() => setShowPostal(false)}
           statusBarTranslucent={true}
         >
-          <SafeAreaView className="flex-1 bg-white">
+          <SafeAreaView className="flex-1 bg-white p-0">
             <View className="flex-row justify-between items-center p-4 border-b border-gray-200">
               <Text className="text-lg font-semibold">
                 {t("appointment.edit.select_address")}

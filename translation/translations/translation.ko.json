@@ -141,6 +141,15 @@
       "title": "프로필"
     }
   },
+  "profile": {
+    "address": "주소",
+    "dateOfBirth": "생년월일",
+    "email": "이메일",
+    "firstName": "이름",
+    "lastName": "성",
+    "phone": "연락처",
+    "title": "프로필"
+  },
   "scanner": {
     "scan": {
       "align_code": "코드를 맞춰주세요",

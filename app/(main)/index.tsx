@@ -119,6 +119,7 @@ export default function HomeScreen() {
           flexDirection: "row",
           flexWrap: "wrap",
           padding: 16,
+          justifyContent: "center",
         }}
       >
         {icons.map((icon) => renderItem({ item: icon }))}

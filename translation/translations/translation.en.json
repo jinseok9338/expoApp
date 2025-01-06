@@ -141,6 +141,15 @@
       "title": "Profile"
     }
   },
+  "profile": {
+    "address": "Address",
+    "dateOfBirth": "Date of Birth",
+    "email": "Email",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone",
+    "title": "Profile"
+  },
   "scanner": {
     "scan": {
       "align_code": "Align the code",

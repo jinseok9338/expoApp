@@ -98,14 +98,7 @@ export default function HomeScreen() {
           size={32} // Reduced icon size to fit 3 columns better
           color={Colors[colorScheme.colorScheme ?? "light"].tint}
         />
-        <Text
-          style={{
-            textAlign: "center",
-            color: "#374151",
-            fontSize: 12, // Reduced font size to fit 3 columns better
-            marginTop: 8,
-          }}
-        >
+        <Text className="text-center text-gray-700 text-xs mt-2">
           {item.label}
         </Text>
       </Box>
@@ -114,14 +107,7 @@ export default function HomeScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
-      <View
-        style={{
-          flexDirection: "row",
-          flexWrap: "wrap",
-          padding: 16,
-          justifyContent: "center",
-        }}
-      >
+      <View className="flex-row flex-wrap p-4 justify-center">
         {icons.map((icon) => renderItem({ item: icon }))}
       </View>
     </View>

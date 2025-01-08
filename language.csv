@@ -35,6 +35,15 @@ bottom/navigation,products,상품,products
 bottom/navigation,schedule,일정,schedule
 calendar/appointments,has-appointments,예약 일정이 있습니다.,Appointments
 calendar/appointments,no-appointments,예약 일정이 없습니다.,No appointments for this day
+checks,cancel,취소,Cancel
+checks,confirm,확인,Confirm
+checks,confirm-registration,정기점검 등록,Regular Check Registration
+checks,has-checks,정기점검이 있습니다.,Regular checks
+checks,no-checks,정기점검이 없습니다.,No regular checks
+checks,register,정기점검 등록,Regular Check Registration
+checks,select-date,날짜 선택,Select Date
+checks,select-time,시간 선택,Select Time
+common,cancel,취소,Cancel
 common,close,닫기,Close
 common,currency,{{n}}원,KRW {{n}}
 common,done,완료,Done

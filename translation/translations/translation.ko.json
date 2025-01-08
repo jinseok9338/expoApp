@@ -49,7 +49,18 @@
       "no-appointments": "예약 일정이 없습니다."
     }
   },
+  "checks": {
+    "cancel": "취소",
+    "confirm": "확인",
+    "confirm-registration": "정기점검 등록",
+    "has-checks": "정기점검이 있습니다.",
+    "no-checks": "정기점검이 없습니다.",
+    "register": "정기점검 등록",
+    "select-date": "날짜 선택",
+    "select-time": "시간 선택"
+  },
   "common": {
+    "cancel": "취소",
     "close": "닫기",
     "currency": "{{n}}원",
     "done": "완료",

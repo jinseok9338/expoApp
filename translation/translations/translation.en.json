@@ -49,7 +49,18 @@
       "no-appointments": "No appointments for this day"
     }
   },
+  "checks": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "confirm-registration": "Regular Check Registration",
+    "has-checks": "Regular checks",
+    "no-checks": "No regular checks",
+    "register": "Regular Check Registration",
+    "select-date": "Select Date",
+    "select-time": "Select Time"
+  },
   "common": {
+    "cancel": "Cancel",
     "close": "Close",
     "currency": "KRW {{n}}",
     "done": "Done",

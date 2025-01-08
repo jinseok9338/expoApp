@@ -177,13 +177,12 @@ const EditScreen = () => {
               </Button>
               <Button
                 onPress={() => {
-                  // Handle update logic here
                   bottomSheetRef.current?.close();
                   Toast.show({
                     type: "success",
                     text1: "Regular check updated successfully",
                   });
-                  router.push("/(sub)/regular-checks");
+                  router.back();
                 }}
                 className="flex-1 py-3 h-12 rounded-xl bg-[#50cebb]"
               >

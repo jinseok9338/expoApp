@@ -108,6 +108,7 @@ profile,firstName,이름,First Name
 profile,lastName,성,Last Name
 profile,phone,연락처,Phone
 profile,title,프로필,Profile
+register-check/time,unavailable,(사용 불가능),(Unavailable)
 scanner/scan,align_code,코드를 맞춰주세요,Align the code
 scanner/scan,no_permission,카메라 권한이 없습니다.,Camera permission is not granted
 scanner/scan,requesting_permission,카메라 권한을 요청하고 있습니다.,Requesting camera permission

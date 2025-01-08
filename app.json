@@ -10,13 +10,15 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.jinseokseo.dolphinuserapp"
+      "bundleIdentifier": "com.jinseokseo.dolphinuserapp",
+      "icon": "./assets/images/dolphin.png"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "icon": "./assets/images/dolphin.png",
       "package": "com.jinseokseo.dolphinuserapp"
     },
     "web": {

@@ -1,15 +1,15 @@
+import { Button } from "@/components/ui";
 import { Ionicons } from "@expo/vector-icons";
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 import { FlashList } from "@shopify/flash-list";
-import { useMemo, useRef } from "react";
+import { router } from "expo-router";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Pressable, SafeAreaView, Text, View } from "react-native";
 import { Calendar, DateData } from "react-native-calendars";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Toast from "react-native-toast-message";
 import { useTimeSlots } from "../../../hooks/useTimeSlots";
-import { Button } from "@/components/ui";
-import { router } from "expo-router";
 
 const RegisterScreen = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -65,7 +65,7 @@ const RegisterScreen = () => {
         }`}
       >
         {`${item.startTime} ~ ${item.endTime}`}
-        {!item.isAvailable && " (Unavailable)"}
+        {!item.isAvailable && " " + t("register-check.time.unavailable")}
       </Text>
       {selectedSlots.includes(item.id) && (
         <Ionicons name="checkmark-circle" size={24} color="#50cebb" />
@@ -166,14 +166,12 @@ const RegisterScreen = () => {
               </Button>
               <Button
                 onPress={() => {
-                  // Handle registration logic here
                   bottomSheetRef.current?.close();
-                  // add toster
                   Toast.show({
                     type: "success",
                     text1: "Regular check registered successfully",
                   });
-                  router.push("/(sub)/regular-checks");
+                  router.back();
                 }}
                 className="flex-1 py-3 h-12 rounded-xl bg-[#50cebb]"
               >

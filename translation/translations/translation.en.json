@@ -161,6 +161,11 @@
     "phone": "Phone",
     "title": "Profile"
   },
+  "register-check": {
+    "time": {
+      "unavailable": "(Unavailable)"
+    }
+  },
   "scanner": {
     "scan": {
       "align_code": "Align the code",

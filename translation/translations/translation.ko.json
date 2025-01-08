@@ -161,6 +161,11 @@
     "phone": "연락처",
     "title": "프로필"
   },
+  "register-check": {
+    "time": {
+      "unavailable": "(사용 불가능)"
+    }
+  },
   "scanner": {
     "scan": {
       "align_code": "코드를 맞춰주세요",

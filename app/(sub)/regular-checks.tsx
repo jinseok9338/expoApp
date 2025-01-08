@@ -91,17 +91,31 @@ const RegularChecksScreen = () => {
           </Text>
           <Text className="text-gray-600 mt-1">{item.description}</Text>
         </View>
-        <Text
-          className={`font-medium ${
-            item.status === "completed"
-              ? "text-blue-600"
-              : item.status === "overdue"
-              ? "text-red-600"
-              : "text-yellow-600"
-          }`}
-        >
-          {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
-        </Text>
+        <View className="items-end">
+          <Text
+            className={`font-medium ${
+              item.status === "completed"
+                ? "text-blue-600"
+                : item.status === "overdue"
+                ? "text-red-600"
+                : "text-yellow-600"
+            }`}
+          >
+            {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
+          </Text>
+          {item.status === "pending" && (
+            <Pressable
+              onPress={() =>
+                router.push(`/(sub)/regular-checks/edit/${item.id}`)
+              }
+              className="mt-2"
+            >
+              <Text className="text-[#50cebb] font-medium">
+                {t("common.edit")}
+              </Text>
+            </Pressable>
+          )}
+        </View>
       </View>
     </Pressable>
   );

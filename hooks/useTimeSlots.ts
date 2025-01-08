@@ -12,14 +12,20 @@ interface UseTimeSlotsProps {
   unavailableSlots?: {
     [date: string]: string[];
   };
+  defaultDate?: string | null;
+  defaultSlots?: string[];
 }
 
 export const useTimeSlots = ({
   unavailableSlots = {},
+  defaultDate = null,
+  defaultSlots = [],
 }: UseTimeSlotsProps = {}) => {
   const today = dayjs().format("YYYY-MM-DD");
-  const [selectedDate, setSelectedDate] = useState<string | null>(today);
-  const [selectedSlots, setSelectedSlots] = useState<string[]>([]);
+  const [selectedDate, setSelectedDate] = useState<string | null>(
+    defaultDate || today
+  );
+  const [selectedSlots, setSelectedSlots] = useState<string[]>(defaultSlots);
 
   const isSlotAvailable = (slotId: string): boolean => {
     if (!selectedDate) return true;
@@ -46,18 +52,19 @@ export const useTimeSlots = ({
       const start12Hour = formatTo12Hour(startTime);
       const end12Hour = formatTo12Hour(endTime);
 
+      const slotId = `slot-${i}`;
       slots.push({
-        id: `slot-${i}`,
+        id: slotId,
         startTime: start12Hour,
         endTime: end12Hour,
-        isAvailable: isSlotAvailable(`slot-${i}`),
+        isAvailable: defaultSlots.includes(slotId) || isSlotAvailable(slotId),
       });
     }
     return slots;
   };
 
   const handleSlotSelection = (slotId: string) => {
-    if (!isSlotAvailable(slotId)) return;
+    if (!isSlotAvailable(slotId) && !defaultSlots.includes(slotId)) return;
 
     setSelectedSlots((prev) => {
       if (prev.includes(slotId)) {
@@ -104,7 +111,9 @@ export const useTimeSlots = ({
 
   const handleDateSelection = (date: string) => {
     setSelectedDate(date);
-    setSelectedSlots([]);
+    if (date !== defaultDate) {
+      setSelectedSlots([]);
+    }
   };
 
   return {

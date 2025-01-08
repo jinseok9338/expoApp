@@ -1,7 +1,4 @@
 {
-  "": {
-    "": ""
-  },
   "appointment": {
     "appointment": {
       "address": "주소",
@@ -53,6 +50,7 @@
     "cancel": "취소",
     "confirm": "확인",
     "confirm-registration": "정기점검 등록",
+    "confirm-update": "수정",
     "has-checks": "정기점검이 있습니다.",
     "no-checks": "정기점검이 없습니다.",
     "register": "정기점검 등록",
@@ -62,10 +60,12 @@
   "common": {
     "cancel": "취소",
     "close": "닫기",
+    "confirm": "확인",
     "currency": "{{n}}원",
     "done": "완료",
     "edit": "수정",
     "save": "저장",
+    "update": "수정",
     "button": {
       "cancel": "취소",
       "English": "English",

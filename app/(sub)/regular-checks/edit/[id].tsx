@@ -7,15 +7,22 @@ import { Pressable, SafeAreaView, Text, View } from "react-native";
 import { Calendar, DateData } from "react-native-calendars";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Toast from "react-native-toast-message";
-import { useTimeSlots } from "../../../hooks/useTimeSlots";
+import { useTimeSlots } from "../../../../hooks/useTimeSlots";
 import { Button } from "@/components/ui";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 
-const RegisterScreen = () => {
+const EditScreen = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
   const { t } = useTranslation();
+  const { id } = useLocalSearchParams();
 
-  const snapPoints = ["40%"];
+  const snapPoints = useMemo(() => ["40%"], []);
+
+  // TODO: Fetch these from your API based on the check ID
+  const checkData = {
+    date: "2024-03-15", // Example default date
+    slots: ["slot-1", "slot-2", "slot-3"], // Example default slots
+  };
 
   const unavailableSlots = {
     "2025-01-05": ["slot-1", "slot-2", "slot-3"],
@@ -28,9 +35,13 @@ const RegisterScreen = () => {
     handleDateSelection,
     handleSlotSelection,
     generateTimeSlots,
-  } = useTimeSlots({ unavailableSlots });
+  } = useTimeSlots({
+    unavailableSlots,
+    defaultDate: checkData.date,
+    defaultSlots: checkData.slots,
+  });
 
-  const handleRegisterPress = () => {
+  const handleUpdatePress = () => {
     bottomSheetRef.current?.expand();
   };
 
@@ -73,7 +84,7 @@ const RegisterScreen = () => {
     </Pressable>
   );
 
-  const isRegistrationValid = selectedDate && selectedSlots.length > 0;
+  const isUpdateValid = selectedDate && selectedSlots.length > 0;
 
   return (
     <GestureHandlerRootView className="flex-1">
@@ -126,15 +137,15 @@ const RegisterScreen = () => {
 
           <View className="px-4 pb-4">
             <Pressable
-              onPress={handleRegisterPress}
-              disabled={!isRegistrationValid}
+              onPress={handleUpdatePress}
+              disabled={!isUpdateValid}
               className={`
                 py-4 rounded-xl
-                ${isRegistrationValid ? "bg-[#50cebb]" : "bg-gray-300"}
+                ${isUpdateValid ? "bg-[#50cebb]" : "bg-gray-300"}
               `}
             >
               <Text className="text-white text-center font-semibold text-lg">
-                {t("checks.register")}
+                {t("common.update")}
               </Text>
             </Pressable>
           </View>
@@ -149,7 +160,7 @@ const RegisterScreen = () => {
           <BottomSheetView className="flex-1 p-6">
             <View className="flex-1">
               <Text className="text-xl font-bold mb-4">
-                {t("checks.confirm-registration")}
+                {t("checks.confirm-update")}
               </Text>
               <Text className="text-gray-600 mb-6">
                 {`Date: ${selectedDate}\nTime: ${selectedSlots.length} slots selected`}
@@ -166,19 +177,18 @@ const RegisterScreen = () => {
               </Button>
               <Button
                 onPress={() => {
-                  // Handle registration logic here
+                  // Handle update logic here
                   bottomSheetRef.current?.close();
-                  // add toster
                   Toast.show({
                     type: "success",
-                    text1: "Regular check registered successfully",
+                    text1: "Regular check updated successfully",
                   });
                   router.push("/(sub)/regular-checks");
                 }}
                 className="flex-1 py-3 h-12 rounded-xl bg-[#50cebb]"
               >
                 <Text className="text-white text-center font-semibold">
-                  {t("checks.confirm")}
+                  {t("common.confirm")}
                 </Text>
               </Button>
             </View>
@@ -189,4 +199,4 @@ const RegisterScreen = () => {
   );
 };
 
-export default RegisterScreen;
+export default EditScreen;

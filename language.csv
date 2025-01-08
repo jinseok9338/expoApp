@@ -1,5 +1,4 @@
 category,key,ko,en
-,,,
 appointment/appointment,address,주소,Address
 appointment/appointment,description,설명,Description
 appointment/appointment,detail_address,상세주소,Detail Address
@@ -38,6 +37,7 @@ calendar/appointments,no-appointments,예약 일정이 없습니다.,No appointm
 checks,cancel,취소,Cancel
 checks,confirm,확인,Confirm
 checks,confirm-registration,정기점검 등록,Regular Check Registration
+checks,confirm-update,수정,Update
 checks,has-checks,정기점검이 있습니다.,Regular checks
 checks,no-checks,정기점검이 없습니다.,No regular checks
 checks,register,정기점검 등록,Regular Check Registration
@@ -45,10 +45,12 @@ checks,select-date,날짜 선택,Select Date
 checks,select-time,시간 선택,Select Time
 common,cancel,취소,Cancel
 common,close,닫기,Close
+common,confirm,확인,Confirm
 common,currency,{{n}}원,KRW {{n}}
 common,done,완료,Done
 common,edit,수정,Edit
 common,save,저장,Save
+common,update,수정,Update
 common/button,cancel,취소,Cancel
 common/button,English,English,English
 common/button,findPassword,비밀번호 찾기,Find Password

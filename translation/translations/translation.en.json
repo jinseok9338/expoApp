@@ -1,7 +1,4 @@
 {
-  "": {
-    "": ""
-  },
   "appointment": {
     "appointment": {
       "address": "Address",
@@ -53,6 +50,7 @@
     "cancel": "Cancel",
     "confirm": "Confirm",
     "confirm-registration": "Regular Check Registration",
+    "confirm-update": "Update",
     "has-checks": "Regular checks",
     "no-checks": "No regular checks",
     "register": "Regular Check Registration",
@@ -62,10 +60,12 @@
   "common": {
     "cancel": "Cancel",
     "close": "Close",
+    "confirm": "Confirm",
     "currency": "KRW {{n}}",
     "done": "Done",
     "edit": "Edit",
     "save": "Save",
+    "update": "Update",
     "button": {
       "cancel": "Cancel",
       "English": "English",

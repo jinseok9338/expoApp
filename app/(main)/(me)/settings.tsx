@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Pressable, Switch, Linking } from "react-native";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "expo-router";
 
 import * as Notifications from "expo-notifications";
 
@@ -11,6 +12,7 @@ export default function SettingsScreen() {
   const { t } = useTranslation();
   const { isUpdateAvailable, currentVersion, storeUrl } = useCheckUpdate();
   const [notificationsEnabled, setNotificationsEnabled] = React.useState(false);
+  const router = useRouter();
 
   React.useEffect(() => {
     checkNotificationPermission();
@@ -56,6 +58,22 @@ export default function SettingsScreen() {
               value={notificationsEnabled}
               onValueChange={handleNotificationToggle}
             />
+          </Pressable>
+        </View>
+
+        {/* Language Settings */}
+        <View className="bg-white rounded-xl mb-4">
+          <Pressable
+            className="flex-row items-center justify-between p-4"
+            onPress={() => router.push("/settings/language")}
+          >
+            <View className="flex-row items-center">
+              <Ionicons name="language-outline" size={24} color="#666" />
+              <Text className="ml-3 text-gray-900">
+                {t("settings.language.title")}
+              </Text>
+            </View>
+            <Ionicons name="chevron-forward" size={24} color="#666" />
           </Pressable>
         </View>
 

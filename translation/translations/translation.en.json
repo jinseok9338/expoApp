@@ -58,6 +58,7 @@
     "select-time": "Select Time"
   },
   "common": {
+    "apply": "Apply",
     "cancel": "Cancel",
     "close": "Close",
     "confirm": "Confirm",
@@ -152,6 +153,19 @@
       "title": "Profile"
     }
   },
+  "products": {
+    "category": "Category",
+    "description": "Description",
+    "filters": "Filter",
+    "paymentType": "Payment Type",
+    "payout": "Payout",
+    "price": "Price",
+    "priceRange": "Price Range",
+    "searchPlaceholder": "Search",
+    "specifications": "Specifications",
+    "subscription": "Subscription",
+    "title": "Product Management"
+  },
   "profile": {
     "address": "Address",
     "dateOfBirth": "Date of Birth",
@@ -175,6 +189,9 @@
     }
   },
   "settings": {
+    "language": {
+      "title": "Language"
+    },
     "notifications": {
       "title": "Notifications"
     },

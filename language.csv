@@ -43,6 +43,7 @@ checks,no-checks,정기점검이 없습니다.,No regular checks
 checks,register,정기점검 등록,Regular Check Registration
 checks,select-date,날짜 선택,Select Date
 checks,select-time,시간 선택,Select Time
+common,apply,적용,Apply
 common,cancel,취소,Cancel
 common,close,닫기,Close
 common,confirm,확인,Confirm
@@ -101,6 +102,18 @@ me/logout,title,로그아웃,Logout
 me/privacy_policy,title,개인정보처리방침,Privacy Policy
 me/settings,title,설정,Settings
 me/your_profile,title,프로필,Profile
+products,category,카테고리,Category
+products,description,설명,Description
+products,filters,필터,Filter
+products,paymentType,결제 유형,Payment Type
+products,payout,현금 지급,Payout
+products,price,가격,Price
+products,priceRange,가격범위,Price Range
+products,searchPlaceholder,검색,Search
+products,specifications,사양,Specifications
+products,subscription,구독,Subscription
+products,title,상품관리,Product Management
+products,title,상품관리,Product Management
 profile,address,주소,Address
 profile,dateOfBirth,생년월일,Date of Birth
 profile,email,이메일,Email
@@ -113,6 +126,7 @@ scanner/scan,align_code,코드를 맞춰주세요,Align the code
 scanner/scan,no_permission,카메라 권한이 없습니다.,Camera permission is not granted
 scanner/scan,requesting_permission,카메라 권한을 요청하고 있습니다.,Requesting camera permission
 scanner/scan,scan_again,다시 스캔,Scan again
+settings/language,title,언어,Language
 settings/notifications,title,알림,Notifications
 settings/permissions,title,권한,Permissions
 settings/update,title,업데이트,Update

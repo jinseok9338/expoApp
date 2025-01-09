@@ -2,7 +2,7 @@ import { Box } from "@/components/ui";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Link } from "expo-router"; // Ensure you have Expo Router installed
+import { Link } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { Platform, Text, View, useWindowDimensions } from "react-native";
 

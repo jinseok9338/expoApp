@@ -1,9 +1,9 @@
-import { View, Text, Pressable } from "react-native";
+import { View, Text, Pressable, TouchableOpacity } from "react-native";
 import { Calendar, DateData } from "react-native-calendars";
 import { useState } from "react";
-import { FlashList } from "@shopify/flash-list";
 import { useTranslation } from "react-i18next";
-import { useRouter } from "expo-router";
+import { Link, router } from "expo-router";
+import { FlashList } from "@shopify/flash-list";
 
 interface RegularCheck {
   id: string;
@@ -104,16 +104,17 @@ const RegularChecksScreen = () => {
             {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
           </Text>
           {item.status === "pending" && (
-            <Pressable
-              onPress={() =>
-                router.push(`/(sub)/regular-checks/edit/${item.id}`)
-              }
+            <Link
+              href={`/(sub)/regular-checks/edit/${item.id}`}
               className="mt-2"
+              asChild
             >
-              <Text className="text-[#50cebb] font-medium">
-                {t("common.edit")}
-              </Text>
-            </Pressable>
+              <TouchableOpacity activeOpacity={0.7}>
+                <Text className="text-[#50cebb] font-medium">
+                  {t("common.edit")}
+                </Text>
+              </TouchableOpacity>
+            </Link>
           )}
         </View>
       </View>
@@ -123,7 +124,6 @@ const RegularChecksScreen = () => {
   const selectedChecks = regularChecks[selectedDate] || [];
 
   const { t } = useTranslation();
-  const router = useRouter();
 
   return (
     <View className="flex-1 bg-gray-50">

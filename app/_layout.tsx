@@ -15,6 +15,8 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { useAuth } from "@/hooks/useAuth";
 import { Toast } from "@/components/ui/toast";
 import { toastConfig } from "@/components/ui/toast";
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
+import { PaperProvider } from "react-native-paper";
 
 const LIGHT_THEME: Theme = {
   dark: false,
@@ -80,18 +82,22 @@ export default function RootLayout() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
-        <QueryClientProvider client={queryClient}>
-          <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
+      <PaperProvider>
+        <BottomSheetModalProvider>
+          <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
+            <QueryClientProvider client={queryClient}>
+              <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
 
-          <Stack
-            screenOptions={{
-              animation: "slide_from_right",
-            }}
-          />
-          <Toast config={toastConfig} />
-        </QueryClientProvider>
-      </ThemeProvider>
+              <Stack
+                screenOptions={{
+                  animation: "slide_from_right",
+                }}
+              />
+              <Toast config={toastConfig} />
+            </QueryClientProvider>
+          </ThemeProvider>
+        </BottomSheetModalProvider>
+      </PaperProvider>
     </GestureHandlerRootView>
   );
 }

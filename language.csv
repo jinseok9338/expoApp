@@ -1,4 +1,5 @@
 category,key,ko,en
+,,,
 appointment/appointment,address,주소,Address
 appointment/appointment,description,설명,Description
 appointment/appointment,detail_address,상세주소,Detail Address
@@ -122,6 +123,24 @@ profile,lastName,성,Last Name
 profile,phone,연락처,Phone
 profile,title,프로필,Profile
 register-check/time,unavailable,(사용 불가능),(Unavailable)
+routing,(main),,
+routing,(main)/me,마이페이지,me
+routing,(main)/products,상품관리,products
+routing,(main)/schedule,일정,schedule
+routing,announcements,공지사항,Announcements
+routing,as-processing,AS 처리등록,AS Processing Registration
+routing,customer-management,고객관리,Customer Management
+routing,home,홈,home
+routing,installation-registration,설치등록,Installation Registration
+routing,me,마이페이지,me
+routing,notifications,알림,Notifications
+routing,product-management,상품관리,Product Management
+routing,products,상품관리,products
+routing,regular-checks,정기점검 등록,regular-checks
+routing,scan,바코드스캔,Scan Barcode
+routing,schedule,일정,schedule
+routing,support-center,지원센터,support-center
+routing,support-center,지원센터,Support Center
 scanner/scan,align_code,코드를 맞춰주세요,Align the code
 scanner/scan,no_permission,카메라 권한이 없습니다.,Camera permission is not granted
 scanner/scan,requesting_permission,카메라 권한을 요청하고 있습니다.,Requesting camera permission

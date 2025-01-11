@@ -54,7 +54,7 @@ export default function HomeScreen() {
     {
       icon: "megaphone",
       label: t("main.navigation.announcements"),
-      route: "/(sub)/announcements",
+      route: "/(sub)/announcement",
     }, // Announcements
     {
       icon: "help-buoy",

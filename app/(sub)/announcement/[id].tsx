@@ -1,7 +1,7 @@
 import { View, ActivityIndicator } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import WebView from "react-native-webview";
-import { mockAnnouncements } from "../announcements";
+import { mockAnnouncements } from ".";
 
 export default function AnnouncementDetailScreen() {
   const { id } = useLocalSearchParams();

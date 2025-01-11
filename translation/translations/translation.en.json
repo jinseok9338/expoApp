@@ -1,4 +1,7 @@
 {
+  "": {
+    "": ""
+  },
   "appointment": {
     "appointment": {
       "address": "Address",
@@ -179,6 +182,25 @@
     "time": {
       "unavailable": "(Unavailable)"
     }
+  },
+  "routing": {
+    "(main)": "",
+    "(main)/me": "me",
+    "(main)/products": "products",
+    "(main)/schedule": "schedule",
+    "announcements": "Announcements",
+    "as-processing": "AS Processing Registration",
+    "customer-management": "Customer Management",
+    "home": "home",
+    "installation-registration": "Installation Registration",
+    "me": "me",
+    "notifications": "Notifications",
+    "product-management": "Product Management",
+    "products": "products",
+    "regular-checks": "regular-checks",
+    "scan": "Scan Barcode",
+    "schedule": "schedule",
+    "support-center": "Support Center"
   },
   "scanner": {
     "scan": {

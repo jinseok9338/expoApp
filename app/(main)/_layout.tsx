@@ -1,13 +1,12 @@
 import { Tabs } from "expo-router";
 import React from "react";
-import { Platform } from "react-native";
 
 import { HapticTab } from "@/components/HapticTab";
+import TabBarBackground from "@/components/ui/TabBarBackground";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useTranslation } from "react-i18next";
-import TabBarBackground from "@/components/ui/TabBarBackground";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -17,21 +16,19 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme.colorScheme ?? "light"].tint,
-        headerShown: false,
+
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            position: "absolute",
-          },
-          default: {},
-        }),
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: t("bottom.navigation.home"),
+          headerTitle: t("routing.home"),
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
           tabBarIcon: ({ color }) => (
             <Ionicons size={24} name="home" color={color} />
           ),
@@ -41,6 +38,10 @@ export default function TabLayout() {
         name="schedule"
         options={{
           title: t("bottom.navigation.schedule"),
+          headerTitle: t("routing.schedule"),
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
           tabBarIcon: ({ color }) => (
             <Ionicons size={24} name="calendar" color={color} />
           ),
@@ -50,6 +51,10 @@ export default function TabLayout() {
         name="products"
         options={{
           title: t("bottom.navigation.products"),
+          headerTitle: t("routing.products"),
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
           tabBarIcon: ({ color }) => (
             <Ionicons size={24} name="bag" color={color} />
           ),
@@ -59,6 +64,10 @@ export default function TabLayout() {
         name="me"
         options={{
           title: t("bottom.navigation.me"),
+          headerTitle: t("routing.me"),
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
           tabBarIcon: ({ color }) => (
             <Ionicons size={24} name="person" color={color} />
           ),

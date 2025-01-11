@@ -17,6 +17,9 @@ import { Toast } from "@/components/ui/toast";
 import { toastConfig } from "@/components/ui/toast";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { PaperProvider } from "react-native-paper";
+import { Text } from "react-native";
+import { useTranslation } from "react-i18next";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const LIGHT_THEME: Theme = {
   dark: false,
@@ -75,29 +78,32 @@ export default function RootLayout() {
   const { isDarkColorScheme } = useColorScheme();
   const { isColorSchemeLoaded } = useLodaColorScheme();
   const { isLoading: isAuthLoading } = useAuth();
+  const { t } = useTranslation();
 
   if (!isColorSchemeLoaded || isAuthLoading) {
     return null;
   }
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <PaperProvider>
-        <BottomSheetModalProvider>
-          <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
-            <QueryClientProvider client={queryClient}>
-              <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
-
-              <Stack
-                screenOptions={{
-                  animation: "slide_from_right",
-                }}
-              />
-              <Toast config={toastConfig} />
-            </QueryClientProvider>
-          </ThemeProvider>
-        </BottomSheetModalProvider>
-      </PaperProvider>
-    </GestureHandlerRootView>
+    <SafeAreaProvider>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <PaperProvider>
+          <BottomSheetModalProvider>
+            <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
+              <QueryClientProvider client={queryClient}>
+                <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
+                <Stack
+                  screenOptions={{
+                    animation: "slide_from_right",
+                    headerShown: false,
+                  }}
+                />
+                <Toast config={toastConfig} />
+              </QueryClientProvider>
+            </ThemeProvider>
+          </BottomSheetModalProvider>
+        </PaperProvider>
+      </GestureHandlerRootView>
+    </SafeAreaProvider>
   );
 }

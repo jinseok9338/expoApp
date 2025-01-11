@@ -1,4 +1,7 @@
 {
+  "": {
+    "": ""
+  },
   "appointment": {
     "appointment": {
       "address": "주소",
@@ -179,6 +182,25 @@
     "time": {
       "unavailable": "(사용 불가능)"
     }
+  },
+  "routing": {
+    "(main)": "",
+    "(main)/me": "마이페이지",
+    "(main)/products": "상품관리",
+    "(main)/schedule": "일정",
+    "announcements": "공지사항",
+    "as-processing": "AS 처리등록",
+    "customer-management": "고객관리",
+    "home": "홈",
+    "installation-registration": "설치등록",
+    "me": "마이페이지",
+    "notifications": "알림",
+    "product-management": "상품관리",
+    "products": "상품관리",
+    "regular-checks": "정기점검 등록",
+    "scan": "바코드스캔",
+    "schedule": "일정",
+    "support-center": "지원센터"
   },
   "scanner": {
     "scan": {

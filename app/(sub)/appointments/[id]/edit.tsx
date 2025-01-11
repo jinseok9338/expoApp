@@ -15,13 +15,6 @@ import { TimePicker } from "@/components/ui/time-picker";
 import { OnCompleteParams } from "@actbase/react-daum-postcode/lib/types";
 import Toast from "react-native-toast-message";
 
-interface Location {
-  name: string;
-  address: string;
-  latitude: number;
-  longitude: number;
-}
-
 // Define the form schema
 const formSchema = z.object({
   date: z.date(),
@@ -221,25 +214,27 @@ export default function EditAppointmentScreen() {
           onRequestClose={() => setShowPostal(false)}
           statusBarTranslucent={true}
         >
-          <SafeAreaView className="flex-1 bg-white p-0">
-            <View className="flex-row justify-between items-center p-4 border-b border-gray-200">
-              <Text className="text-lg font-semibold">
-                {t("appointment.edit.select_address")}
-              </Text>
-              <Pressable onPress={() => setShowPostal(false)} className="p-2">
-                <Text className="text-blue-600 font-semibold">
-                  {t("common.close")}
+          <SafeAreaView className="flex-1 bg-white">
+            <View className="flex-1 p-0">
+              <View className="flex-row justify-between items-center p-4 border-b border-gray-200">
+                <Text className="text-lg font-semibold">
+                  {t("appointment.edit.select_address")}
                 </Text>
-              </Pressable>
-            </View>
-            <View className="flex-1">
-              <Postcode
-                style={{ width: "100%", height: "100%" }}
-                jsOptions={{ animation: false }}
-                onSelected={handlePostalSelect}
-                onError={(error) => console.error(error)}
-                i18nIsDynamicList={true}
-              />
+                <Pressable onPress={() => setShowPostal(false)} className="p-2">
+                  <Text className="text-blue-600 font-semibold">
+                    {t("common.close")}
+                  </Text>
+                </Pressable>
+              </View>
+              <View className="flex-1">
+                <Postcode
+                  style={{ width: "100%", height: "100%" }}
+                  jsOptions={{ animation: false }}
+                  onSelected={handlePostalSelect}
+                  onError={(error) => console.error(error)}
+                  i18nIsDynamicList={true}
+                />
+              </View>
             </View>
           </SafeAreaView>
         </Modal>

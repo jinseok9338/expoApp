@@ -76,7 +76,7 @@ export default function ScheduleScreen() {
 
   const renderAppointment = ({ item }: { item: Appointment }) => (
     <Pressable
-      onPress={() => router.push(`/(main)/appointments/${item.id}`)}
+      onPress={() => router.push(`/(sub)/appointments/${item.id}`)}
       className="bg-white rounded-xl p-4 mb-3 border border-gray-100"
     >
       <View className="flex-row justify-between items-start">

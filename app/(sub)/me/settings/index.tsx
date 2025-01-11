@@ -65,7 +65,7 @@ export default function SettingsScreen() {
         <View className="bg-white rounded-xl mb-4">
           <Pressable
             className="flex-row items-center justify-between p-4"
-            onPress={() => router.push("/settings/language")}
+            onPress={() => router.push("/(sub)/me/settings/language")}
           >
             <View className="flex-row items-center">
               <Ionicons name="language-outline" size={24} color="#666" />

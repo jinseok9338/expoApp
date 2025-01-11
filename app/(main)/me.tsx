@@ -9,7 +9,7 @@ import * as ImageManipulator from "expo-image-manipulator";
 
 export default function MeScreen() {
   const { t } = useTranslation();
-  const [imageUri, setImageUri] = useState("https://placeholder.com/150");
+  const [imageUri, setImageUri] = useState("https://picsum.photos/2000");
 
   const handleImageSelection = async () => {
     Alert.alert("Change Profile Picture", "Choose an option", [
@@ -88,11 +88,11 @@ export default function MeScreen() {
     <SafeAreaView className="flex-1 bg-white">
       <View className="p-4">
         {/* Profile Header */}
-        <View className="items-center mb-6">
+        <View className="items-center mb-6 ">
           <Pressable className="relative" onPress={handleImageSelection}>
             <Image
               source={{ uri: imageUri }}
-              className="w-24 h-24 rounded-full"
+              className="w-24 h-24 rounded-full border-solid border-2 border-gray-200"
             />
             <View className="absolute bottom-0 right-0 bg-brown-500 rounded-full p-2">
               <Ionicons name="pencil" size={20} color="white" />
@@ -103,7 +103,7 @@ export default function MeScreen() {
 
         {/* Menu Items */}
         <View className="space-y-4">
-          <Link href="/(main)/(me)/profile" asChild>
+          <Link href="/(sub)/me/profile" asChild>
             <Pressable className="flex-row items-center justify-between p-4 bg-gray-50 rounded-lg">
               <View className="flex-row items-center">
                 <Ionicons name="person-outline" size={24} color="#666" />
@@ -113,7 +113,7 @@ export default function MeScreen() {
             </Pressable>
           </Link>
 
-          <Link href="/(main)/(me)/settings" asChild>
+          <Link href="/(sub)/me/settings" asChild>
             <Pressable className="flex-row items-center justify-between p-4 bg-gray-50 rounded-lg">
               <View className="flex-row items-center">
                 <Ionicons name="settings-outline" size={24} color="#666" />
@@ -123,7 +123,7 @@ export default function MeScreen() {
             </Pressable>
           </Link>
 
-          <Link href="/(main)/(me)/help" asChild>
+          <Link href="/(sub)/me/help" asChild>
             <Pressable className="flex-row items-center justify-between p-4 bg-gray-50 rounded-lg">
               <View className="flex-row items-center">
                 <Ionicons name="help-circle-outline" size={24} color="#666" />
@@ -133,7 +133,7 @@ export default function MeScreen() {
             </Pressable>
           </Link>
 
-          <Link href="/(main)/(me)/privacy" asChild>
+          <Link href="/(sub)/me/privacy" asChild>
             <Pressable className="flex-row items-center justify-between p-4 bg-gray-50 rounded-lg">
               <View className="flex-row items-center">
                 <Ionicons name="lock-closed-outline" size={24} color="#666" />
